@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomRule xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns="http://www.chinacreator.com/platform/mvc/rule" service="false" className="gbt.dept.service.AnnuService" method="initAnnuDeptInfo">
+  <name>初始化年度考核信息</name>
+  <inputs>
+    <input collection="false" desc="" id="info" required="true" type="gbt.dept.AnnuDeptInfo"/>
+  </inputs>
+  <outputs>
+    <output autoValue="Result" desc="" id="result" name="方法返回值" type="gbt.dept.AnnuDeptInfo"/>
+  </outputs>
+  <params>
+    <param autoValue="Input.info" name="info" signature="QAnnuDeptInfo;" type="gbt.dept.AnnuDeptInfo"/>
+  </params>
+  <return signature="QAnnuDeptInfo;" type="gbt.dept.AnnuDeptInfo"/>
+</CustomRule>

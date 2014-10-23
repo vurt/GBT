@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomRule xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns="http://www.chinacreator.com/platform/mvc/rule" sn="" service="false" className="gbt.dept.service.DepartmentService" method="initNewId">
+  <instanceCreator>
+    <params/>
+  </instanceCreator>
+  <name>初始化临时单位id</name>
+  <inputs>
+    <input collection="false" desc="" id="department" name="单位信息草稿" required="true" type="gbt.dept.DepartmentDraft"/>
+  </inputs>
+  <outputs>
+    <output autoValue="Result" desc="" id="result" name="方法返回值" type="gbt.dept.DepartmentDraft"/>
+  </outputs>
+  <params>
+    <param autoValue="Input.department" name="department" signature="QDepartmentDraft;" type="gbt.dept.DepartmentDraft"/>
+  </params>
+  <return signature="QDepartmentDraft;" type="gbt.dept.DepartmentDraft"/>
+</CustomRule>

@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd"><mapper namespace="gbt.opt.OptionMapper">	
+	
+<!-- ElementID:column_sql,Generated=true -->
+<sql id="column_sql">
+		  options.option_id ,
+		  options.option_name ,
+		  options.option_type ,
+		  options.parent_id ,
+		  options.option_note ,
+		  options.orderby ,
+		  options.selectable 
+</sql>
+
+<!-- ElementID:whereClause_sql,Generated=true -->
+<sql id="whereClause_sql">
+	    <if test="optionId != null">and options.option_id = #{optionId}</if>
+	    <if test="optionName != null">and options.option_name = #{optionName}</if>
+	    <if test="optionType != null">and options.option_type = #{optionType}</if>
+	    <if test="parentId != null">and options.parent_id = #{parentId}</if>
+	    <if test="optionNote != null">and options.option_note = #{optionNote}</if>
+	    <if test="orderby != null">and options.orderby = #{orderby}</if>
+	    <if test="selectable != null">and options.selectable = #{selectable}</if>
+</sql>
+
+
+<!-- ElementName:cache,Generated=true -->
+<cache/>
+
+<!-- ElementID:insert,Generated=true -->
+<insert id="insert" parameterType="gbt.opt.Option">
+	insert into options(
+	        <if test="optionId != null">option_id</if>
+	        <if test="optionName != null">,option_name</if>
+	        <if test="optionType != null">,option_type</if>
+	        <if test="parentId != null">,parent_id</if>
+	        <if test="optionNote != null">,option_note</if>
+	        <if test="orderby != null">,orderby</if>
+	        <if test="selectable != null">,selectable</if>
+		)
+	 values (
+	         <if test="optionId != null">#{optionId,jdbcType=NUMERIC}</if>
+	         <if test="optionName != null">,#{optionName,jdbcType=VARCHAR}</if>
+	         <if test="optionType != null">,#{optionType,jdbcType=VARCHAR}</if>
+	         <if test="parentId != null">,#{parentId,jdbcType=NUMERIC}</if>
+	         <if test="optionNote != null">,#{optionNote,jdbcType=VARCHAR}</if>
+	         <if test="orderby != null">,#{orderby,jdbcType=NUMERIC}</if>
+	         <if test="selectable != null">,#{selectable,jdbcType=CHAR}</if>
+	 )
+</insert>
+
+<!-- ElementID:count,Generated=true -->
+<select id="count" parameterType="gbt.opt.Option" resultType="int">
+		select count(*)
+	    from options 
+		 <where>
+<include refid="whereClause_sql"/>
+		</where>
+</select>
+
+<!-- ElementID:update,Generated=true -->
+<update id="update" parameterType="gbt.opt.Option">
+	update options
+<set>
+	<if test="optionName != null">option_name=#{optionName,jdbcType=VARCHAR},</if>
+	<if test="optionType != null">option_type=#{optionType,jdbcType=VARCHAR},</if>
+	<if test="parentId != null">parent_id=#{parentId,jdbcType=NUMERIC},</if>
+	<if test="optionNote != null">option_note=#{optionNote,jdbcType=VARCHAR},</if>
+	<if test="orderby != null">orderby=#{orderby,jdbcType=NUMERIC},</if>
+	<if test="selectable != null">selectable=#{selectable,jdbcType=CHAR}</if>
+</set>
+<where>
+	<choose>
+        <when test="optionId != null">and option_id = #{optionId}</when>
+        <otherwise>and option_id = </otherwise>
+    </choose>
+</where>
+</update>
+
+<!-- ElementID:delete,Generated=true -->
+<delete id="delete" parameterType="gbt.opt.Option">
+    delete from options 
+where 1=1 and option_id = #{optionId}
+</delete>
+
+<!-- ElementID:select,Generated=true -->
+<select id="select" parameterType="gbt.opt.Option" resultMap="OptionResult">
+	select 
+<include refid="column_sql"/>
+	    from options 
+		 <where>
+<include refid="whereClause_sql"/>
+		</where>
+</select>
+
+<!-- ElementID:OptionResult,Generated=true -->
+<resultMap id="OptionResult" type="gbt.opt.Option">
+	<id property="optionId" column="option_id"/>
+	<result property="optionName" column="option_name"/>
+	<result property="optionType" column="option_type"/>
+	<result property="parentId" column="parent_id"/>
+	<result property="optionNote" column="option_note"/>
+	<result property="orderby" column="orderby"/>
+	<result property="selectable" column="selectable"/>
+</resultMap>
+
+
+<!-- ElementID:insertBatch,Generated=true -->
+<insert id="insertBatch" parameterType="list">
+	insert into options (option_id,option_name,option_type,parent_id,option_note,orderby,selectable) 
+<foreach collection="list" item="entity" index="index" separator="union all">
+		select 
+		#{entity.optionId,jdbcType = NUMERIC},
+		#{entity.optionName,jdbcType = VARCHAR},
+		#{entity.optionType,jdbcType = VARCHAR},
+		#{entity.parentId,jdbcType = NUMERIC},
+		#{entity.optionNote,jdbcType = VARCHAR},
+		#{entity.orderby,jdbcType = NUMERIC},
+		#{entity.selectable,jdbcType = CHAR}
+		from dual
+</foreach>
+</insert>
+
+<!-- ElementID:deleteBatch,Generated=true -->
+<delete id="deleteBatch" parameterType="List">
+	delete from options where option_id in
+<trim prefix="(" suffix=")" suffixOverrides=",">
+<foreach collection="list" item="entity" separator=",">
+	#{entity.optionId}
+</foreach>
+</trim>
+</delete>
+
+<!-- ElementID:updateBatch,Generated=true -->
+<update id="updateBatch" parameterType="gbt.opt.Option">
+	<foreach collection="list" item="entity" separator=";">
+			update options
+	<set>
+	<if test="entity.optionName != null">optionName= #{entity.optionName,jdbcType=VARCHAR},</if>
+	<if test="entity.optionType != null">optionType= #{entity.optionType,jdbcType=VARCHAR},</if>
+	<if test="entity.parentId != null">parentId= #{entity.parentId,jdbcType=NUMERIC},</if>
+	<if test="entity.optionNote != null">optionNote= #{entity.optionNote,jdbcType=VARCHAR},</if>
+	<if test="entity.orderby != null">orderby= #{entity.orderby,jdbcType=NUMERIC},</if>
+	<if test="entity.selectable != null">selectable= #{entity.selectable,jdbcType=CHAR}</if>
+	</set>
+		<where>
+			<choose>
+				<when test="optionId != null">and option_id = #{optionId}</when>
+				<otherwise>and option_id = </otherwise>
+			</choose>
+		</where>
+	</foreach>
+</update>
+
+<!-- ElementID:selectAll,Generated=true -->
+<select id="selectAll" resultMap="OptionResult">
+	select 
+<include refid="column_sql"/>
+	    from options 
+		 <where>
+<include refid="whereClause_sql"/>
+		</where>
+</select>
+
+
+
+
+
+
+<!-- ElementID:selectMany,Generated=true -->
+<select id="selectMany" parameterType="gbt.opt.Option" resultMap="OptionResult">
+<foreach collection="list" item="entity" separator="intersect">
+	select 
+<include refid="column_sql"/>
+	    from options 
+		 <where>
+<include refid="whereClause_sql"/>
+		</where>
+</foreach>
+</select>
+
+
+
+
+<!-- ElementID:selectByID,Generated=true -->
+<select id="selectByID" parameterType="gbt.opt.Option" resultMap="OptionResult">
+	select 
+<include refid="column_sql"/>
+	    from options 
+		 <where>
+				<choose>
+					<when test="optionId != null">and option_id = #{optionId}</when>
+					<otherwise>and option_id = </otherwise>
+				</choose>
+		</where>
+</select>
+
+
+
+
+<!-- ElementID:selectByPage,Generated=true -->
+<select id="selectByPage" parameterType="gbt.opt.Option" resultMap="OptionResult">
+	select 
+<include refid="column_sql"/>
+	    from options 
+		 <where>
+<include refid="whereClause_sql"/>
+		</where>
+</select>
+
+
+
+
+</mapper>

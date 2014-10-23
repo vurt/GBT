@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<DataSources xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.chinacreator.com/platform/core/datasource" default="">
+  <datasource xsi:type="DBCPDataSource" id="mysql" default="true" sys="true" name="新数据源">
+    <driverClassName>com.mysql.jdbc.Driver</driverClassName>
+    <url>jdbc:mysql://127.0.0.1:3306/gbt?useUnicode=true&amp;characterEncoding=UTF-8</url>
+    <username>root</username>
+    <password>root</password>
+  </datasource>
+</DataSources>

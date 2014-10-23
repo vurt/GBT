@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity:Entity xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:docket="http://www.chinacreator.com/platform/mvc/docket" xmlns:entity="http://www.chinacreator.com/platform/mvc/entity" sn="aa">
+  <docket:name>sss</docket:name>
+  <docket:createType>来自数据库</docket:createType>
+  <docket:primaryKey>
+    <docket:pkAttribute attribute="id" type="UUID"/>
+  </docket:primaryKey>
+  <docket:attributes/>
+  <docket:subDokcets/>
+  <docket:events/>
+  <docket:table table="tb_sm_usercategory"/>
+  <entity:datas/>
+  <entity:views/>
+</entity:Entity>

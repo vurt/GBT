@@ -1,0 +1,1037 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd"><mapper namespace="gbt.dept.DepartmentMapper">	
+
+<!-- ElementName:cache,Generated=true -->
+<cache/>
+
+<!-- ElementID:insert,Generated=true -->
+<insert id="insert" parameterType="gbt.dept.Department">
+	insert into dpt_base_info(dpt_id,name_all,name_simp,name_pin,name_init,dpt_belo,up_dpt_id,dpt_prio,hier1,hier2,hier3,lvl1,lvl2,prop1,prop2,prop3,park,san_ding,lead_theo_num,lead_real_num,lead_sold_num,lead_zang_num,lead_vaca_num,lead_vaca_excl,lead_remark,oth_theo_num,oth_real_num,oth_sold_num,oth_zang_num,oth_vaca_num,oth_vaca_excl,oth_remk,no_theo_num,no_real_num,no_sold_num,no_zang_num,no_vaca_num,no_vaca_excl,no_remk,selectable,canceled,created_by,updated_by,created_at,updated_at)
+	 values (#{dptId,jdbcType=NUMERIC},#{nameAll,jdbcType=VARCHAR},#{nameSimp,jdbcType=VARCHAR},#{namePin,jdbcType=VARCHAR},#{nameInit,jdbcType=VARCHAR},#{dptBelo,jdbcType=NUMERIC},#{upDptId,jdbcType=NUMERIC},#{dptPrio,jdbcType=NUMERIC},#{hier1,jdbcType=NUMERIC},#{hier2,jdbcType=NUMERIC},#{hier3,jdbcType=NUMERIC},#{lvl1,jdbcType=NUMERIC},#{lvl2,jdbcType=NUMERIC},#{prop1,jdbcType=NUMERIC},#{prop2,jdbcType=NUMERIC},#{prop3,jdbcType=NUMERIC},#{park,jdbcType=NUMERIC},#{sanDing,jdbcType=CLOB},#{leadTheoNum,jdbcType=NUMERIC},#{leadRealNum,jdbcType=NUMERIC},#{leadSoldNum,jdbcType=NUMERIC},#{leadZangNum,jdbcType=NUMERIC},#{leadVacaNum,jdbcType=NUMERIC},#{leadVacaExcl,jdbcType=NUMERIC},#{leadRemark,jdbcType=CLOB},#{othTheoNum,jdbcType=NUMERIC},#{othRealNum,jdbcType=NUMERIC},#{othSoldNum,jdbcType=NUMERIC},#{othZangNum,jdbcType=NUMERIC},#{othVacaNum,jdbcType=NUMERIC},#{othVacaExcl,jdbcType=NUMERIC},#{othRemk,jdbcType=CLOB},#{noTheoNum,jdbcType=NUMERIC},#{noRealNum,jdbcType=NUMERIC},#{noSoldNum,jdbcType=NUMERIC},#{noZangNum,jdbcType=NUMERIC},#{noVacaNum,jdbcType=NUMERIC},#{noVacaExcl,jdbcType=NUMERIC},#{noRemk,jdbcType=CLOB},#{selectable,jdbcType=CHAR},#{canceled,jdbcType=CHAR},#{createdBy,jdbcType=NUMERIC},#{updatedBy,jdbcType=NUMERIC},#{createdAt,jdbcType=TIMESTAMP},#{updatedAt,jdbcType=TIMESTAMP})
+</insert>
+
+<!-- ElementID:count,Generated=true -->
+<select id="count" parameterType="gbt.dept.Department" resultType="int">
+		select count(*)
+	    from dpt_base_info 
+		 <where>
+	        <if test="dptId != null">
+		    and dpt_base_info.dpt_id = #{dptId}
+		</if>
+	        <if test="nameAll != null">
+		    and dpt_base_info.name_all = #{nameAll}
+		</if>
+	        <if test="nameSimp != null">
+		    and dpt_base_info.name_simp = #{nameSimp}
+		</if>
+	        <if test="namePin != null">
+		    and dpt_base_info.name_pin = #{namePin}
+		</if>
+	        <if test="nameInit != null">
+		    and dpt_base_info.name_init = #{nameInit}
+		</if>
+	        <if test="dptBelo != null">
+		    and dpt_base_info.dpt_belo = #{dptBelo}
+		</if>
+	        <if test="upDptId != null">
+		    and dpt_base_info.up_dpt_id = #{upDptId}
+		</if>
+	        <if test="dptPrio != null">
+		    and dpt_base_info.dpt_prio = #{dptPrio}
+		</if>
+	        <if test="hier1 != null">
+		    and dpt_base_info.hier1 = #{hier1}
+		</if>
+	        <if test="hier2 != null">
+		    and dpt_base_info.hier2 = #{hier2}
+		</if>
+	        <if test="hier3 != null">
+		    and dpt_base_info.hier3 = #{hier3}
+		</if>
+	        <if test="lvl1 != null">
+		    and dpt_base_info.lvl1 = #{lvl1}
+		</if>
+	        <if test="lvl2 != null">
+		    and dpt_base_info.lvl2 = #{lvl2}
+		</if>
+	        <if test="prop1 != null">
+		    and dpt_base_info.prop1 = #{prop1}
+		</if>
+	        <if test="prop2 != null">
+		    and dpt_base_info.prop2 = #{prop2}
+		</if>
+	        <if test="prop3 != null">
+		    and dpt_base_info.prop3 = #{prop3}
+		</if>
+	        <if test="park != null">
+		    and dpt_base_info.park = #{park}
+		</if>
+	        <if test="sanDing != null">
+		    and dpt_base_info.san_ding = #{sanDing}
+		</if>
+	        <if test="leadTheoNum != null">
+		    and dpt_base_info.lead_theo_num = #{leadTheoNum}
+		</if>
+	        <if test="leadRealNum != null">
+		    and dpt_base_info.lead_real_num = #{leadRealNum}
+		</if>
+	        <if test="leadSoldNum != null">
+		    and dpt_base_info.lead_sold_num = #{leadSoldNum}
+		</if>
+	        <if test="leadZangNum != null">
+		    and dpt_base_info.lead_zang_num = #{leadZangNum}
+		</if>
+	        <if test="leadVacaNum != null">
+		    and dpt_base_info.lead_vaca_num = #{leadVacaNum}
+		</if>
+	        <if test="leadVacaExcl != null">
+		    and dpt_base_info.lead_vaca_excl = #{leadVacaExcl}
+		</if>
+	        <if test="leadRemark != null">
+		    and dpt_base_info.lead_remark = #{leadRemark}
+		</if>
+	        <if test="othTheoNum != null">
+		    and dpt_base_info.oth_theo_num = #{othTheoNum}
+		</if>
+	        <if test="othRealNum != null">
+		    and dpt_base_info.oth_real_num = #{othRealNum}
+		</if>
+	        <if test="othSoldNum != null">
+		    and dpt_base_info.oth_sold_num = #{othSoldNum}
+		</if>
+	        <if test="othZangNum != null">
+		    and dpt_base_info.oth_zang_num = #{othZangNum}
+		</if>
+	        <if test="othVacaNum != null">
+		    and dpt_base_info.oth_vaca_num = #{othVacaNum}
+		</if>
+	        <if test="othVacaExcl != null">
+		    and dpt_base_info.oth_vaca_excl = #{othVacaExcl}
+		</if>
+	        <if test="othRemk != null">
+		    and dpt_base_info.oth_remk = #{othRemk}
+		</if>
+	        <if test="noTheoNum != null">
+		    and dpt_base_info.no_theo_num = #{noTheoNum}
+		</if>
+	        <if test="noRealNum != null">
+		    and dpt_base_info.no_real_num = #{noRealNum}
+		</if>
+	        <if test="noSoldNum != null">
+		    and dpt_base_info.no_sold_num = #{noSoldNum}
+		</if>
+	        <if test="noZangNum != null">
+		    and dpt_base_info.no_zang_num = #{noZangNum}
+		</if>
+	        <if test="noVacaNum != null">
+		    and dpt_base_info.no_vaca_num = #{noVacaNum}
+		</if>
+	        <if test="noVacaExcl != null">
+		    and dpt_base_info.no_vaca_excl = #{noVacaExcl}
+		</if>
+	        <if test="noRemk != null">
+		    and dpt_base_info.no_remk = #{noRemk}
+		</if>
+	        <if test="selectable != null">
+		    and dpt_base_info.selectable = #{selectable}
+		</if>
+	        <if test="canceled != null">
+		    and dpt_base_info.canceled = #{canceled}
+		</if>
+	        <if test="createdBy != null">
+		    and dpt_base_info.created_by = #{createdBy}
+		</if>
+	        <if test="updatedBy != null">
+		    and dpt_base_info.updated_by = #{updatedBy}
+		</if>
+	        <if test="createdAt != null">
+		    and dpt_base_info.created_at = #{createdAt}
+		</if>
+	        <if test="updatedAt != null">
+		    and dpt_base_info.updated_at = #{updatedAt}
+		</if>
+		    and dpt_base_info.C2_LOGICDELETE_FLAG !='1'
+		</where>
+</select>
+
+<!-- ElementID:update,Generated=true -->
+<update id="update" parameterType="gbt.dept.Department">
+	update dpt_base_info
+<set>
+	<if test="nameAll != null">name_all=#{nameAll,jdbcType=VARCHAR},</if>
+	<if test="nameSimp != null">name_simp=#{nameSimp,jdbcType=VARCHAR},</if>
+	<if test="namePin != null">name_pin=#{namePin,jdbcType=VARCHAR},</if>
+	<if test="nameInit != null">name_init=#{nameInit,jdbcType=VARCHAR},</if>
+	<if test="dptBelo != null">dpt_belo=#{dptBelo,jdbcType=NUMERIC},</if>
+	<if test="upDptId != null">up_dpt_id=#{upDptId,jdbcType=NUMERIC},</if>
+	<if test="dptPrio != null">dpt_prio=#{dptPrio,jdbcType=NUMERIC},</if>
+	<if test="hier1 != null">hier1=#{hier1,jdbcType=NUMERIC},</if>
+	<if test="hier2 != null">hier2=#{hier2,jdbcType=NUMERIC},</if>
+	<if test="hier3 != null">hier3=#{hier3,jdbcType=NUMERIC},</if>
+	<if test="lvl1 != null">lvl1=#{lvl1,jdbcType=NUMERIC},</if>
+	<if test="lvl2 != null">lvl2=#{lvl2,jdbcType=NUMERIC},</if>
+	<if test="prop1 != null">prop1=#{prop1,jdbcType=NUMERIC},</if>
+	<if test="prop2 != null">prop2=#{prop2,jdbcType=NUMERIC},</if>
+	<if test="prop3 != null">prop3=#{prop3,jdbcType=NUMERIC},</if>
+	<if test="park != null">park=#{park,jdbcType=NUMERIC},</if>
+	<if test="sanDing != null">san_ding=#{sanDing,jdbcType=CLOB},</if>
+	<if test="leadTheoNum != null">lead_theo_num=#{leadTheoNum,jdbcType=NUMERIC},</if>
+	<if test="leadRealNum != null">lead_real_num=#{leadRealNum,jdbcType=NUMERIC},</if>
+	<if test="leadSoldNum != null">lead_sold_num=#{leadSoldNum,jdbcType=NUMERIC},</if>
+	<if test="leadZangNum != null">lead_zang_num=#{leadZangNum,jdbcType=NUMERIC},</if>
+	<if test="leadVacaNum != null">lead_vaca_num=#{leadVacaNum,jdbcType=NUMERIC},</if>
+	<if test="leadVacaExcl != null">lead_vaca_excl=#{leadVacaExcl,jdbcType=NUMERIC},</if>
+	<if test="leadRemark != null">lead_remark=#{leadRemark,jdbcType=CLOB},</if>
+	<if test="othTheoNum != null">oth_theo_num=#{othTheoNum,jdbcType=NUMERIC},</if>
+	<if test="othRealNum != null">oth_real_num=#{othRealNum,jdbcType=NUMERIC},</if>
+	<if test="othSoldNum != null">oth_sold_num=#{othSoldNum,jdbcType=NUMERIC},</if>
+	<if test="othZangNum != null">oth_zang_num=#{othZangNum,jdbcType=NUMERIC},</if>
+	<if test="othVacaNum != null">oth_vaca_num=#{othVacaNum,jdbcType=NUMERIC},</if>
+	<if test="othVacaExcl != null">oth_vaca_excl=#{othVacaExcl,jdbcType=NUMERIC},</if>
+	<if test="othRemk != null">oth_remk=#{othRemk,jdbcType=CLOB},</if>
+	<if test="noTheoNum != null">no_theo_num=#{noTheoNum,jdbcType=NUMERIC},</if>
+	<if test="noRealNum != null">no_real_num=#{noRealNum,jdbcType=NUMERIC},</if>
+	<if test="noSoldNum != null">no_sold_num=#{noSoldNum,jdbcType=NUMERIC},</if>
+	<if test="noZangNum != null">no_zang_num=#{noZangNum,jdbcType=NUMERIC},</if>
+	<if test="noVacaNum != null">no_vaca_num=#{noVacaNum,jdbcType=NUMERIC},</if>
+	<if test="noVacaExcl != null">no_vaca_excl=#{noVacaExcl,jdbcType=NUMERIC},</if>
+	<if test="noRemk != null">no_remk=#{noRemk,jdbcType=CLOB},</if>
+	<if test="selectable != null">selectable=#{selectable,jdbcType=CHAR},</if>
+	<if test="canceled != null">canceled=#{canceled,jdbcType=CHAR},</if>
+	<if test="createdBy != null">created_by=#{createdBy,jdbcType=NUMERIC},</if>
+	<if test="updatedBy != null">updated_by=#{updatedBy,jdbcType=NUMERIC},</if>
+	<if test="createdAt != null">created_at=#{createdAt,jdbcType=TIMESTAMP},</if>
+	<if test="updatedAt != null">updated_at=#{updatedAt,jdbcType=TIMESTAMP}</if>
+</set>
+<where>
+	<choose>
+        <when test="dptId != null">and dpt_id = #{dptId}</when>
+        <otherwise>and dpt_id = </otherwise>
+    </choose>
+</where>
+</update>
+
+<!-- ElementID:select,Generated=true -->
+<select id="select" parameterType="gbt.dept.Department" resultMap="DepartmentResult">
+		select 
+		  dpt_base_info.dpt_id ,
+		  dpt_base_info.name_all ,
+		  dpt_base_info.name_simp ,
+		  dpt_base_info.name_pin ,
+		  dpt_base_info.name_init ,
+		  dpt_base_info.dpt_belo ,
+		  dpt_base_info.up_dpt_id ,
+		  dpt_base_info.dpt_prio ,
+		  dpt_base_info.hier1 ,
+		  dpt_base_info.hier2 ,
+		  dpt_base_info.hier3 ,
+		  dpt_base_info.lvl1 ,
+		  dpt_base_info.lvl2 ,
+		  dpt_base_info.prop1 ,
+		  dpt_base_info.prop2 ,
+		  dpt_base_info.prop3 ,
+		  dpt_base_info.park ,
+		  dpt_base_info.san_ding ,
+		  dpt_base_info.lead_theo_num ,
+		  dpt_base_info.lead_real_num ,
+		  dpt_base_info.lead_sold_num ,
+		  dpt_base_info.lead_zang_num ,
+		  dpt_base_info.lead_vaca_num ,
+		  dpt_base_info.lead_vaca_excl ,
+		  dpt_base_info.lead_remark ,
+		  dpt_base_info.oth_theo_num ,
+		  dpt_base_info.oth_real_num ,
+		  dpt_base_info.oth_sold_num ,
+		  dpt_base_info.oth_zang_num ,
+		  dpt_base_info.oth_vaca_num ,
+		  dpt_base_info.oth_vaca_excl ,
+		  dpt_base_info.oth_remk ,
+		  dpt_base_info.no_theo_num ,
+		  dpt_base_info.no_real_num ,
+		  dpt_base_info.no_sold_num ,
+		  dpt_base_info.no_zang_num ,
+		  dpt_base_info.no_vaca_num ,
+		  dpt_base_info.no_vaca_excl ,
+		  dpt_base_info.no_remk ,
+		  dpt_base_info.selectable ,
+		  dpt_base_info.canceled ,
+		  dpt_base_info.created_by ,
+		  dpt_base_info.updated_by ,
+		  dpt_base_info.created_at ,
+		  dpt_base_info.updated_at 
+	    from dpt_base_info 
+		 <where>
+	        <if test="dptId != null">
+		    and dpt_base_info.dpt_id = #{dptId}
+		</if>
+	        <if test="nameAll != null">
+		    and dpt_base_info.name_all = #{nameAll}
+		</if>
+	        <if test="nameSimp != null">
+		    and dpt_base_info.name_simp = #{nameSimp}
+		</if>
+	        <if test="namePin != null">
+		    and dpt_base_info.name_pin = #{namePin}
+		</if>
+	        <if test="nameInit != null">
+		    and dpt_base_info.name_init = #{nameInit}
+		</if>
+	        <if test="dptBelo != null">
+		    and dpt_base_info.dpt_belo = #{dptBelo}
+		</if>
+	        <if test="upDptId != null">
+		    and dpt_base_info.up_dpt_id = #{upDptId}
+		</if>
+	        <if test="dptPrio != null">
+		    and dpt_base_info.dpt_prio = #{dptPrio}
+		</if>
+	        <if test="hier1 != null">
+		    and dpt_base_info.hier1 = #{hier1}
+		</if>
+	        <if test="hier2 != null">
+		    and dpt_base_info.hier2 = #{hier2}
+		</if>
+	        <if test="hier3 != null">
+		    and dpt_base_info.hier3 = #{hier3}
+		</if>
+	        <if test="lvl1 != null">
+		    and dpt_base_info.lvl1 = #{lvl1}
+		</if>
+	        <if test="lvl2 != null">
+		    and dpt_base_info.lvl2 = #{lvl2}
+		</if>
+	        <if test="prop1 != null">
+		    and dpt_base_info.prop1 = #{prop1}
+		</if>
+	        <if test="prop2 != null">
+		    and dpt_base_info.prop2 = #{prop2}
+		</if>
+	        <if test="prop3 != null">
+		    and dpt_base_info.prop3 = #{prop3}
+		</if>
+	        <if test="park != null">
+		    and dpt_base_info.park = #{park}
+		</if>
+	        <if test="sanDing != null">
+		    and dpt_base_info.san_ding = #{sanDing}
+		</if>
+	        <if test="leadTheoNum != null">
+		    and dpt_base_info.lead_theo_num = #{leadTheoNum}
+		</if>
+	        <if test="leadRealNum != null">
+		    and dpt_base_info.lead_real_num = #{leadRealNum}
+		</if>
+	        <if test="leadSoldNum != null">
+		    and dpt_base_info.lead_sold_num = #{leadSoldNum}
+		</if>
+	        <if test="leadZangNum != null">
+		    and dpt_base_info.lead_zang_num = #{leadZangNum}
+		</if>
+	        <if test="leadVacaNum != null">
+		    and dpt_base_info.lead_vaca_num = #{leadVacaNum}
+		</if>
+	        <if test="leadVacaExcl != null">
+		    and dpt_base_info.lead_vaca_excl = #{leadVacaExcl}
+		</if>
+	        <if test="leadRemark != null">
+		    and dpt_base_info.lead_remark = #{leadRemark}
+		</if>
+	        <if test="othTheoNum != null">
+		    and dpt_base_info.oth_theo_num = #{othTheoNum}
+		</if>
+	        <if test="othRealNum != null">
+		    and dpt_base_info.oth_real_num = #{othRealNum}
+		</if>
+	        <if test="othSoldNum != null">
+		    and dpt_base_info.oth_sold_num = #{othSoldNum}
+		</if>
+	        <if test="othZangNum != null">
+		    and dpt_base_info.oth_zang_num = #{othZangNum}
+		</if>
+	        <if test="othVacaNum != null">
+		    and dpt_base_info.oth_vaca_num = #{othVacaNum}
+		</if>
+	        <if test="othVacaExcl != null">
+		    and dpt_base_info.oth_vaca_excl = #{othVacaExcl}
+		</if>
+	        <if test="othRemk != null">
+		    and dpt_base_info.oth_remk = #{othRemk}
+		</if>
+	        <if test="noTheoNum != null">
+		    and dpt_base_info.no_theo_num = #{noTheoNum}
+		</if>
+	        <if test="noRealNum != null">
+		    and dpt_base_info.no_real_num = #{noRealNum}
+		</if>
+	        <if test="noSoldNum != null">
+		    and dpt_base_info.no_sold_num = #{noSoldNum}
+		</if>
+	        <if test="noZangNum != null">
+		    and dpt_base_info.no_zang_num = #{noZangNum}
+		</if>
+	        <if test="noVacaNum != null">
+		    and dpt_base_info.no_vaca_num = #{noVacaNum}
+		</if>
+	        <if test="noVacaExcl != null">
+		    and dpt_base_info.no_vaca_excl = #{noVacaExcl}
+		</if>
+	        <if test="noRemk != null">
+		    and dpt_base_info.no_remk = #{noRemk}
+		</if>
+	        <if test="selectable != null">
+		    and dpt_base_info.selectable = #{selectable}
+		</if>
+	        <if test="canceled != null">
+		    and dpt_base_info.canceled = #{canceled}
+		</if>
+	        <if test="createdBy != null">
+		    and dpt_base_info.created_by = #{createdBy}
+		</if>
+	        <if test="updatedBy != null">
+		    and dpt_base_info.updated_by = #{updatedBy}
+		</if>
+	        <if test="createdAt != null">
+		    and dpt_base_info.created_at = #{createdAt}
+		</if>
+	        <if test="updatedAt != null">
+		    and dpt_base_info.updated_at = #{updatedAt}
+		</if>
+		    and dpt_base_info.C2_LOGICDELETE_FLAG !='1'
+		</where>
+	order by 
+			created_at desc
+</select>
+
+<!-- ElementID:DepartmentResult,Generated=true -->
+<resultMap id="DepartmentResult" type="gbt.dept.Department">
+	<id property="dptId" column="dpt_id"/>
+	<result property="nameAll" column="name_all"/>
+	<result property="nameSimp" column="name_simp"/>
+	<result property="namePin" column="name_pin"/>
+	<result property="nameInit" column="name_init"/>
+	<result property="dptBelo" column="dpt_belo"/>
+	<result property="upDptId" column="up_dpt_id"/>
+	<result property="dptPrio" column="dpt_prio"/>
+	<result property="hier1" column="hier1"/>
+	<result property="hier2" column="hier2"/>
+	<result property="hier3" column="hier3"/>
+	<result property="lvl1" column="lvl1"/>
+	<result property="lvl2" column="lvl2"/>
+	<result property="prop1" column="prop1"/>
+	<result property="prop2" column="prop2"/>
+	<result property="prop3" column="prop3"/>
+	<result property="park" column="park"/>
+	<result property="sanDing" column="san_ding"/>
+	<result property="leadTheoNum" column="lead_theo_num"/>
+	<result property="leadRealNum" column="lead_real_num"/>
+	<result property="leadSoldNum" column="lead_sold_num"/>
+	<result property="leadZangNum" column="lead_zang_num"/>
+	<result property="leadVacaNum" column="lead_vaca_num"/>
+	<result property="leadVacaExcl" column="lead_vaca_excl"/>
+	<result property="leadRemark" column="lead_remark"/>
+	<result property="othTheoNum" column="oth_theo_num"/>
+	<result property="othRealNum" column="oth_real_num"/>
+	<result property="othSoldNum" column="oth_sold_num"/>
+	<result property="othZangNum" column="oth_zang_num"/>
+	<result property="othVacaNum" column="oth_vaca_num"/>
+	<result property="othVacaExcl" column="oth_vaca_excl"/>
+	<result property="othRemk" column="oth_remk"/>
+	<result property="noTheoNum" column="no_theo_num"/>
+	<result property="noRealNum" column="no_real_num"/>
+	<result property="noSoldNum" column="no_sold_num"/>
+	<result property="noZangNum" column="no_zang_num"/>
+	<result property="noVacaNum" column="no_vaca_num"/>
+	<result property="noVacaExcl" column="no_vaca_excl"/>
+	<result property="noRemk" column="no_remk"/>
+	<result property="selectable" column="selectable"/>
+	<result property="canceled" column="canceled"/>
+	<result property="createdBy" column="created_by"/>
+	<result property="updatedBy" column="updated_by"/>
+	<result property="createdAt" column="created_at"/>
+	<result property="updatedAt" column="updated_at"/>
+</resultMap>
+
+
+<!-- ElementID:insertBatch,Generated=true -->
+<insert id="insertBatch" parameterType="list">
+	insert into dpt_base_info (dpt_id,name_all,name_simp,name_pin,name_init,dpt_belo,up_dpt_id,dpt_prio,hier1,hier2,hier3,lvl1,lvl2,prop1,prop2,prop3,park,san_ding,lead_theo_num,lead_real_num,lead_sold_num,lead_zang_num,lead_vaca_num,lead_vaca_excl,lead_remark,oth_theo_num,oth_real_num,oth_sold_num,oth_zang_num,oth_vaca_num,oth_vaca_excl,oth_remk,no_theo_num,no_real_num,no_sold_num,no_zang_num,no_vaca_num,no_vaca_excl,no_remk,selectable,canceled,created_by,updated_by,created_at,updated_at) 
+<foreach collection="list" item="entity" index="index" separator="union all">
+		select 
+		#{entity.dptId,jdbcType = NUMERIC},
+		#{entity.nameAll,jdbcType = VARCHAR},
+		#{entity.nameSimp,jdbcType = VARCHAR},
+		#{entity.namePin,jdbcType = VARCHAR},
+		#{entity.nameInit,jdbcType = VARCHAR},
+		#{entity.dptBelo,jdbcType = NUMERIC},
+		#{entity.upDptId,jdbcType = NUMERIC},
+		#{entity.dptPrio,jdbcType = NUMERIC},
+		#{entity.hier1,jdbcType = NUMERIC},
+		#{entity.hier2,jdbcType = NUMERIC},
+		#{entity.hier3,jdbcType = NUMERIC},
+		#{entity.lvl1,jdbcType = NUMERIC},
+		#{entity.lvl2,jdbcType = NUMERIC},
+		#{entity.prop1,jdbcType = NUMERIC},
+		#{entity.prop2,jdbcType = NUMERIC},
+		#{entity.prop3,jdbcType = NUMERIC},
+		#{entity.park,jdbcType = NUMERIC},
+		#{entity.sanDing,jdbcType = CLOB},
+		#{entity.leadTheoNum,jdbcType = NUMERIC},
+		#{entity.leadRealNum,jdbcType = NUMERIC},
+		#{entity.leadSoldNum,jdbcType = NUMERIC},
+		#{entity.leadZangNum,jdbcType = NUMERIC},
+		#{entity.leadVacaNum,jdbcType = NUMERIC},
+		#{entity.leadVacaExcl,jdbcType = NUMERIC},
+		#{entity.leadRemark,jdbcType = CLOB},
+		#{entity.othTheoNum,jdbcType = NUMERIC},
+		#{entity.othRealNum,jdbcType = NUMERIC},
+		#{entity.othSoldNum,jdbcType = NUMERIC},
+		#{entity.othZangNum,jdbcType = NUMERIC},
+		#{entity.othVacaNum,jdbcType = NUMERIC},
+		#{entity.othVacaExcl,jdbcType = NUMERIC},
+		#{entity.othRemk,jdbcType = CLOB},
+		#{entity.noTheoNum,jdbcType = NUMERIC},
+		#{entity.noRealNum,jdbcType = NUMERIC},
+		#{entity.noSoldNum,jdbcType = NUMERIC},
+		#{entity.noZangNum,jdbcType = NUMERIC},
+		#{entity.noVacaNum,jdbcType = NUMERIC},
+		#{entity.noVacaExcl,jdbcType = NUMERIC},
+		#{entity.noRemk,jdbcType = CLOB},
+		#{entity.selectable,jdbcType = CHAR},
+		#{entity.canceled,jdbcType = CHAR},
+		#{entity.createdBy,jdbcType = NUMERIC},
+		#{entity.updatedBy,jdbcType = NUMERIC},
+		#{entity.createdAt,jdbcType = TIMESTAMP},
+		#{entity.updatedAt,jdbcType = TIMESTAMP}
+		from dual
+</foreach>
+</insert>
+
+<!-- ElementID:updateBatch,Generated=true -->
+<update id="updateBatch" parameterType="gbt.dept.Department">
+	<foreach collection="list" item="entity" separator=";">
+			update dpt_base_info
+	<set>
+	<if test="entity.nameAll != null">nameAll= #{entity.nameAll,jdbcType=VARCHAR},</if>
+	<if test="entity.nameSimp != null">nameSimp= #{entity.nameSimp,jdbcType=VARCHAR},</if>
+	<if test="entity.namePin != null">namePin= #{entity.namePin,jdbcType=VARCHAR},</if>
+	<if test="entity.nameInit != null">nameInit= #{entity.nameInit,jdbcType=VARCHAR},</if>
+	<if test="entity.dptBelo != null">dptBelo= #{entity.dptBelo,jdbcType=NUMERIC},</if>
+	<if test="entity.upDptId != null">upDptId= #{entity.upDptId,jdbcType=NUMERIC},</if>
+	<if test="entity.dptPrio != null">dptPrio= #{entity.dptPrio,jdbcType=NUMERIC},</if>
+	<if test="entity.hier1 != null">hier1= #{entity.hier1,jdbcType=NUMERIC},</if>
+	<if test="entity.hier2 != null">hier2= #{entity.hier2,jdbcType=NUMERIC},</if>
+	<if test="entity.hier3 != null">hier3= #{entity.hier3,jdbcType=NUMERIC},</if>
+	<if test="entity.lvl1 != null">lvl1= #{entity.lvl1,jdbcType=NUMERIC},</if>
+	<if test="entity.lvl2 != null">lvl2= #{entity.lvl2,jdbcType=NUMERIC},</if>
+	<if test="entity.prop1 != null">prop1= #{entity.prop1,jdbcType=NUMERIC},</if>
+	<if test="entity.prop2 != null">prop2= #{entity.prop2,jdbcType=NUMERIC},</if>
+	<if test="entity.prop3 != null">prop3= #{entity.prop3,jdbcType=NUMERIC},</if>
+	<if test="entity.park != null">park= #{entity.park,jdbcType=NUMERIC},</if>
+	<if test="entity.sanDing != null">sanDing= #{entity.sanDing,jdbcType=CLOB},</if>
+	<if test="entity.leadTheoNum != null">leadTheoNum= #{entity.leadTheoNum,jdbcType=NUMERIC},</if>
+	<if test="entity.leadRealNum != null">leadRealNum= #{entity.leadRealNum,jdbcType=NUMERIC},</if>
+	<if test="entity.leadSoldNum != null">leadSoldNum= #{entity.leadSoldNum,jdbcType=NUMERIC},</if>
+	<if test="entity.leadZangNum != null">leadZangNum= #{entity.leadZangNum,jdbcType=NUMERIC},</if>
+	<if test="entity.leadVacaNum != null">leadVacaNum= #{entity.leadVacaNum,jdbcType=NUMERIC},</if>
+	<if test="entity.leadVacaExcl != null">leadVacaExcl= #{entity.leadVacaExcl,jdbcType=NUMERIC},</if>
+	<if test="entity.leadRemark != null">leadRemark= #{entity.leadRemark,jdbcType=CLOB},</if>
+	<if test="entity.othTheoNum != null">othTheoNum= #{entity.othTheoNum,jdbcType=NUMERIC},</if>
+	<if test="entity.othRealNum != null">othRealNum= #{entity.othRealNum,jdbcType=NUMERIC},</if>
+	<if test="entity.othSoldNum != null">othSoldNum= #{entity.othSoldNum,jdbcType=NUMERIC},</if>
+	<if test="entity.othZangNum != null">othZangNum= #{entity.othZangNum,jdbcType=NUMERIC},</if>
+	<if test="entity.othVacaNum != null">othVacaNum= #{entity.othVacaNum,jdbcType=NUMERIC},</if>
+	<if test="entity.othVacaExcl != null">othVacaExcl= #{entity.othVacaExcl,jdbcType=NUMERIC},</if>
+	<if test="entity.othRemk != null">othRemk= #{entity.othRemk,jdbcType=CLOB},</if>
+	<if test="entity.noTheoNum != null">noTheoNum= #{entity.noTheoNum,jdbcType=NUMERIC},</if>
+	<if test="entity.noRealNum != null">noRealNum= #{entity.noRealNum,jdbcType=NUMERIC},</if>
+	<if test="entity.noSoldNum != null">noSoldNum= #{entity.noSoldNum,jdbcType=NUMERIC},</if>
+	<if test="entity.noZangNum != null">noZangNum= #{entity.noZangNum,jdbcType=NUMERIC},</if>
+	<if test="entity.noVacaNum != null">noVacaNum= #{entity.noVacaNum,jdbcType=NUMERIC},</if>
+	<if test="entity.noVacaExcl != null">noVacaExcl= #{entity.noVacaExcl,jdbcType=NUMERIC},</if>
+	<if test="entity.noRemk != null">noRemk= #{entity.noRemk,jdbcType=CLOB},</if>
+	<if test="entity.selectable != null">selectable= #{entity.selectable,jdbcType=CHAR},</if>
+	<if test="entity.canceled != null">canceled= #{entity.canceled,jdbcType=CHAR},</if>
+	<if test="entity.createdBy != null">createdBy= #{entity.createdBy,jdbcType=NUMERIC},</if>
+	<if test="entity.updatedBy != null">updatedBy= #{entity.updatedBy,jdbcType=NUMERIC},</if>
+	<if test="entity.createdAt != null">createdAt= #{entity.createdAt,jdbcType=TIMESTAMP},</if>
+	<if test="entity.updatedAt != null">updatedAt= #{entity.updatedAt,jdbcType=TIMESTAMP}</if>
+	</set>
+		<where>
+			<choose>
+				<when test="dptId != null">and dpt_id = #{dptId}</when>
+				<otherwise>and dpt_id = </otherwise>
+			</choose>
+		</where>
+	</foreach>
+</update>
+
+<!-- ElementID:selectAll,Generated=true -->
+<select id="selectAll" resultMap="DepartmentResult">
+			select 
+		  dpt_base_info.dpt_id ,
+		  dpt_base_info.name_all ,
+		  dpt_base_info.name_simp ,
+		  dpt_base_info.name_pin ,
+		  dpt_base_info.name_init ,
+		  dpt_base_info.dpt_belo ,
+		  dpt_base_info.up_dpt_id ,
+		  dpt_base_info.dpt_prio ,
+		  dpt_base_info.hier1 ,
+		  dpt_base_info.hier2 ,
+		  dpt_base_info.hier3 ,
+		  dpt_base_info.lvl1 ,
+		  dpt_base_info.lvl2 ,
+		  dpt_base_info.prop1 ,
+		  dpt_base_info.prop2 ,
+		  dpt_base_info.prop3 ,
+		  dpt_base_info.park ,
+		  dpt_base_info.san_ding ,
+		  dpt_base_info.lead_theo_num ,
+		  dpt_base_info.lead_real_num ,
+		  dpt_base_info.lead_sold_num ,
+		  dpt_base_info.lead_zang_num ,
+		  dpt_base_info.lead_vaca_num ,
+		  dpt_base_info.lead_vaca_excl ,
+		  dpt_base_info.lead_remark ,
+		  dpt_base_info.oth_theo_num ,
+		  dpt_base_info.oth_real_num ,
+		  dpt_base_info.oth_sold_num ,
+		  dpt_base_info.oth_zang_num ,
+		  dpt_base_info.oth_vaca_num ,
+		  dpt_base_info.oth_vaca_excl ,
+		  dpt_base_info.oth_remk ,
+		  dpt_base_info.no_theo_num ,
+		  dpt_base_info.no_real_num ,
+		  dpt_base_info.no_sold_num ,
+		  dpt_base_info.no_zang_num ,
+		  dpt_base_info.no_vaca_num ,
+		  dpt_base_info.no_vaca_excl ,
+		  dpt_base_info.no_remk ,
+		  dpt_base_info.selectable ,
+		  dpt_base_info.canceled ,
+		  dpt_base_info.created_by ,
+		  dpt_base_info.updated_by ,
+		  dpt_base_info.created_at ,
+		  dpt_base_info.updated_at 
+	    from dpt_base_info 
+		    where dpt_base_info.C2_LOGICDELETE_FLAG !='1'
+</select>
+
+
+
+
+
+
+<!-- ElementID:selectMany,Generated=true -->
+<select id="selectMany" parameterType="gbt.dept.Department" resultMap="DepartmentResult">
+<foreach collection="list" item="entity" separator="intersect">
+			select 
+		  dpt_base_info.dpt_id ,
+		  dpt_base_info.name_all ,
+		  dpt_base_info.name_simp ,
+		  dpt_base_info.name_pin ,
+		  dpt_base_info.name_init ,
+		  dpt_base_info.dpt_belo ,
+		  dpt_base_info.up_dpt_id ,
+		  dpt_base_info.dpt_prio ,
+		  dpt_base_info.hier1 ,
+		  dpt_base_info.hier2 ,
+		  dpt_base_info.hier3 ,
+		  dpt_base_info.lvl1 ,
+		  dpt_base_info.lvl2 ,
+		  dpt_base_info.prop1 ,
+		  dpt_base_info.prop2 ,
+		  dpt_base_info.prop3 ,
+		  dpt_base_info.park ,
+		  dpt_base_info.san_ding ,
+		  dpt_base_info.lead_theo_num ,
+		  dpt_base_info.lead_real_num ,
+		  dpt_base_info.lead_sold_num ,
+		  dpt_base_info.lead_zang_num ,
+		  dpt_base_info.lead_vaca_num ,
+		  dpt_base_info.lead_vaca_excl ,
+		  dpt_base_info.lead_remark ,
+		  dpt_base_info.oth_theo_num ,
+		  dpt_base_info.oth_real_num ,
+		  dpt_base_info.oth_sold_num ,
+		  dpt_base_info.oth_zang_num ,
+		  dpt_base_info.oth_vaca_num ,
+		  dpt_base_info.oth_vaca_excl ,
+		  dpt_base_info.oth_remk ,
+		  dpt_base_info.no_theo_num ,
+		  dpt_base_info.no_real_num ,
+		  dpt_base_info.no_sold_num ,
+		  dpt_base_info.no_zang_num ,
+		  dpt_base_info.no_vaca_num ,
+		  dpt_base_info.no_vaca_excl ,
+		  dpt_base_info.no_remk ,
+		  dpt_base_info.selectable ,
+		  dpt_base_info.canceled ,
+		  dpt_base_info.created_by ,
+		  dpt_base_info.updated_by ,
+		  dpt_base_info.created_at ,
+		  dpt_base_info.updated_at 
+	    from dpt_base_info 
+	<where>
+	        <if test="entity.dptId != null">
+		    and dpt_base_info.dpt_id = #{entity.dptId}
+		</if>
+	        <if test="entity.nameAll != null">
+		    and dpt_base_info.name_all = #{entity.nameAll}
+		</if>
+	        <if test="entity.nameSimp != null">
+		    and dpt_base_info.name_simp = #{entity.nameSimp}
+		</if>
+	        <if test="entity.namePin != null">
+		    and dpt_base_info.name_pin = #{entity.namePin}
+		</if>
+	        <if test="entity.nameInit != null">
+		    and dpt_base_info.name_init = #{entity.nameInit}
+		</if>
+	        <if test="entity.dptBelo != null">
+		    and dpt_base_info.dpt_belo = #{entity.dptBelo}
+		</if>
+	        <if test="entity.upDptId != null">
+		    and dpt_base_info.up_dpt_id = #{entity.upDptId}
+		</if>
+	        <if test="entity.dptPrio != null">
+		    and dpt_base_info.dpt_prio = #{entity.dptPrio}
+		</if>
+	        <if test="entity.hier1 != null">
+		    and dpt_base_info.hier1 = #{entity.hier1}
+		</if>
+	        <if test="entity.hier2 != null">
+		    and dpt_base_info.hier2 = #{entity.hier2}
+		</if>
+	        <if test="entity.hier3 != null">
+		    and dpt_base_info.hier3 = #{entity.hier3}
+		</if>
+	        <if test="entity.lvl1 != null">
+		    and dpt_base_info.lvl1 = #{entity.lvl1}
+		</if>
+	        <if test="entity.lvl2 != null">
+		    and dpt_base_info.lvl2 = #{entity.lvl2}
+		</if>
+	        <if test="entity.prop1 != null">
+		    and dpt_base_info.prop1 = #{entity.prop1}
+		</if>
+	        <if test="entity.prop2 != null">
+		    and dpt_base_info.prop2 = #{entity.prop2}
+		</if>
+	        <if test="entity.prop3 != null">
+		    and dpt_base_info.prop3 = #{entity.prop3}
+		</if>
+	        <if test="entity.park != null">
+		    and dpt_base_info.park = #{entity.park}
+		</if>
+	        <if test="entity.sanDing != null">
+		    and dpt_base_info.san_ding = #{entity.sanDing}
+		</if>
+	        <if test="entity.leadTheoNum != null">
+		    and dpt_base_info.lead_theo_num = #{entity.leadTheoNum}
+		</if>
+	        <if test="entity.leadRealNum != null">
+		    and dpt_base_info.lead_real_num = #{entity.leadRealNum}
+		</if>
+	        <if test="entity.leadSoldNum != null">
+		    and dpt_base_info.lead_sold_num = #{entity.leadSoldNum}
+		</if>
+	        <if test="entity.leadZangNum != null">
+		    and dpt_base_info.lead_zang_num = #{entity.leadZangNum}
+		</if>
+	        <if test="entity.leadVacaNum != null">
+		    and dpt_base_info.lead_vaca_num = #{entity.leadVacaNum}
+		</if>
+	        <if test="entity.leadVacaExcl != null">
+		    and dpt_base_info.lead_vaca_excl = #{entity.leadVacaExcl}
+		</if>
+	        <if test="entity.leadRemark != null">
+		    and dpt_base_info.lead_remark = #{entity.leadRemark}
+		</if>
+	        <if test="entity.othTheoNum != null">
+		    and dpt_base_info.oth_theo_num = #{entity.othTheoNum}
+		</if>
+	        <if test="entity.othRealNum != null">
+		    and dpt_base_info.oth_real_num = #{entity.othRealNum}
+		</if>
+	        <if test="entity.othSoldNum != null">
+		    and dpt_base_info.oth_sold_num = #{entity.othSoldNum}
+		</if>
+	        <if test="entity.othZangNum != null">
+		    and dpt_base_info.oth_zang_num = #{entity.othZangNum}
+		</if>
+	        <if test="entity.othVacaNum != null">
+		    and dpt_base_info.oth_vaca_num = #{entity.othVacaNum}
+		</if>
+	        <if test="entity.othVacaExcl != null">
+		    and dpt_base_info.oth_vaca_excl = #{entity.othVacaExcl}
+		</if>
+	        <if test="entity.othRemk != null">
+		    and dpt_base_info.oth_remk = #{entity.othRemk}
+		</if>
+	        <if test="entity.noTheoNum != null">
+		    and dpt_base_info.no_theo_num = #{entity.noTheoNum}
+		</if>
+	        <if test="entity.noRealNum != null">
+		    and dpt_base_info.no_real_num = #{entity.noRealNum}
+		</if>
+	        <if test="entity.noSoldNum != null">
+		    and dpt_base_info.no_sold_num = #{entity.noSoldNum}
+		</if>
+	        <if test="entity.noZangNum != null">
+		    and dpt_base_info.no_zang_num = #{entity.noZangNum}
+		</if>
+	        <if test="entity.noVacaNum != null">
+		    and dpt_base_info.no_vaca_num = #{entity.noVacaNum}
+		</if>
+	        <if test="entity.noVacaExcl != null">
+		    and dpt_base_info.no_vaca_excl = #{entity.noVacaExcl}
+		</if>
+	        <if test="entity.noRemk != null">
+		    and dpt_base_info.no_remk = #{entity.noRemk}
+		</if>
+	        <if test="entity.selectable != null">
+		    and dpt_base_info.selectable = #{entity.selectable}
+		</if>
+	        <if test="entity.canceled != null">
+		    and dpt_base_info.canceled = #{entity.canceled}
+		</if>
+	        <if test="entity.createdBy != null">
+		    and dpt_base_info.created_by = #{entity.createdBy}
+		</if>
+	        <if test="entity.updatedBy != null">
+		    and dpt_base_info.updated_by = #{entity.updatedBy}
+		</if>
+	        <if test="entity.createdAt != null">
+		    and dpt_base_info.created_at = #{entity.createdAt}
+		</if>
+	        <if test="entity.updatedAt != null">
+		    and dpt_base_info.updated_at = #{entity.updatedAt}
+		</if>
+		    and dpt_base_info.C2_LOGICDELETE_FLAG !='1'
+	</where>
+</foreach>
+</select>
+
+
+
+
+
+<!-- ElementID:selectByPage,Generated=true -->
+<select id="selectByPage" parameterType="gbt.dept.Department" resultMap="DepartmentResult">
+		select 
+		  dpt_base_info.dpt_id ,
+		  dpt_base_info.name_all ,
+		  dpt_base_info.name_simp ,
+		  dpt_base_info.name_pin ,
+		  dpt_base_info.name_init ,
+		  dpt_base_info.dpt_belo ,
+		  dpt_base_info.up_dpt_id ,
+		  dpt_base_info.dpt_prio ,
+		  dpt_base_info.hier1 ,
+		  dpt_base_info.hier2 ,
+		  dpt_base_info.hier3 ,
+		  dpt_base_info.lvl1 ,
+		  dpt_base_info.lvl2 ,
+		  dpt_base_info.prop1 ,
+		  dpt_base_info.prop2 ,
+		  dpt_base_info.prop3 ,
+		  dpt_base_info.park ,
+		  dpt_base_info.san_ding ,
+		  dpt_base_info.lead_theo_num ,
+		  dpt_base_info.lead_real_num ,
+		  dpt_base_info.lead_sold_num ,
+		  dpt_base_info.lead_zang_num ,
+		  dpt_base_info.lead_vaca_num ,
+		  dpt_base_info.lead_vaca_excl ,
+		  dpt_base_info.lead_remark ,
+		  dpt_base_info.oth_theo_num ,
+		  dpt_base_info.oth_real_num ,
+		  dpt_base_info.oth_sold_num ,
+		  dpt_base_info.oth_zang_num ,
+		  dpt_base_info.oth_vaca_num ,
+		  dpt_base_info.oth_vaca_excl ,
+		  dpt_base_info.oth_remk ,
+		  dpt_base_info.no_theo_num ,
+		  dpt_base_info.no_real_num ,
+		  dpt_base_info.no_sold_num ,
+		  dpt_base_info.no_zang_num ,
+		  dpt_base_info.no_vaca_num ,
+		  dpt_base_info.no_vaca_excl ,
+		  dpt_base_info.no_remk ,
+		  dpt_base_info.selectable ,
+		  dpt_base_info.canceled ,
+		  dpt_base_info.created_by ,
+		  dpt_base_info.updated_by ,
+		  dpt_base_info.created_at ,
+		  dpt_base_info.updated_at 
+	    from dpt_base_info 
+		 <where>
+	        <if test="dptId != null">
+		    and dpt_base_info.dpt_id = #{dptId}
+		</if>
+	        <if test="nameAll != null">
+		    and dpt_base_info.name_all = #{nameAll}
+		</if>
+	        <if test="nameSimp != null">
+		    and dpt_base_info.name_simp = #{nameSimp}
+		</if>
+	        <if test="namePin != null">
+		    and dpt_base_info.name_pin = #{namePin}
+		</if>
+	        <if test="nameInit != null">
+		    and dpt_base_info.name_init = #{nameInit}
+		</if>
+	        <if test="dptBelo != null">
+		    and dpt_base_info.dpt_belo = #{dptBelo}
+		</if>
+	        <if test="upDptId != null">
+		    and dpt_base_info.up_dpt_id = #{upDptId}
+		</if>
+	        <if test="dptPrio != null">
+		    and dpt_base_info.dpt_prio = #{dptPrio}
+		</if>
+	        <if test="hier1 != null">
+		    and dpt_base_info.hier1 = #{hier1}
+		</if>
+	        <if test="hier2 != null">
+		    and dpt_base_info.hier2 = #{hier2}
+		</if>
+	        <if test="hier3 != null">
+		    and dpt_base_info.hier3 = #{hier3}
+		</if>
+	        <if test="lvl1 != null">
+		    and dpt_base_info.lvl1 = #{lvl1}
+		</if>
+	        <if test="lvl2 != null">
+		    and dpt_base_info.lvl2 = #{lvl2}
+		</if>
+	        <if test="prop1 != null">
+		    and dpt_base_info.prop1 = #{prop1}
+		</if>
+	        <if test="prop2 != null">
+		    and dpt_base_info.prop2 = #{prop2}
+		</if>
+	        <if test="prop3 != null">
+		    and dpt_base_info.prop3 = #{prop3}
+		</if>
+	        <if test="park != null">
+		    and dpt_base_info.park = #{park}
+		</if>
+	        <if test="sanDing != null">
+		    and dpt_base_info.san_ding = #{sanDing}
+		</if>
+	        <if test="leadTheoNum != null">
+		    and dpt_base_info.lead_theo_num = #{leadTheoNum}
+		</if>
+	        <if test="leadRealNum != null">
+		    and dpt_base_info.lead_real_num = #{leadRealNum}
+		</if>
+	        <if test="leadSoldNum != null">
+		    and dpt_base_info.lead_sold_num = #{leadSoldNum}
+		</if>
+	        <if test="leadZangNum != null">
+		    and dpt_base_info.lead_zang_num = #{leadZangNum}
+		</if>
+	        <if test="leadVacaNum != null">
+		    and dpt_base_info.lead_vaca_num = #{leadVacaNum}
+		</if>
+	        <if test="leadVacaExcl != null">
+		    and dpt_base_info.lead_vaca_excl = #{leadVacaExcl}
+		</if>
+	        <if test="leadRemark != null">
+		    and dpt_base_info.lead_remark = #{leadRemark}
+		</if>
+	        <if test="othTheoNum != null">
+		    and dpt_base_info.oth_theo_num = #{othTheoNum}
+		</if>
+	        <if test="othRealNum != null">
+		    and dpt_base_info.oth_real_num = #{othRealNum}
+		</if>
+	        <if test="othSoldNum != null">
+		    and dpt_base_info.oth_sold_num = #{othSoldNum}
+		</if>
+	        <if test="othZangNum != null">
+		    and dpt_base_info.oth_zang_num = #{othZangNum}
+		</if>
+	        <if test="othVacaNum != null">
+		    and dpt_base_info.oth_vaca_num = #{othVacaNum}
+		</if>
+	        <if test="othVacaExcl != null">
+		    and dpt_base_info.oth_vaca_excl = #{othVacaExcl}
+		</if>
+	        <if test="othRemk != null">
+		    and dpt_base_info.oth_remk = #{othRemk}
+		</if>
+	        <if test="noTheoNum != null">
+		    and dpt_base_info.no_theo_num = #{noTheoNum}
+		</if>
+	        <if test="noRealNum != null">
+		    and dpt_base_info.no_real_num = #{noRealNum}
+		</if>
+	        <if test="noSoldNum != null">
+		    and dpt_base_info.no_sold_num = #{noSoldNum}
+		</if>
+	        <if test="noZangNum != null">
+		    and dpt_base_info.no_zang_num = #{noZangNum}
+		</if>
+	        <if test="noVacaNum != null">
+		    and dpt_base_info.no_vaca_num = #{noVacaNum}
+		</if>
+	        <if test="noVacaExcl != null">
+		    and dpt_base_info.no_vaca_excl = #{noVacaExcl}
+		</if>
+	        <if test="noRemk != null">
+		    and dpt_base_info.no_remk = #{noRemk}
+		</if>
+	        <if test="selectable != null">
+		    and dpt_base_info.selectable = #{selectable}
+		</if>
+	        <if test="canceled != null">
+		    and dpt_base_info.canceled = #{canceled}
+		</if>
+	        <if test="createdBy != null">
+		    and dpt_base_info.created_by = #{createdBy}
+		</if>
+	        <if test="updatedBy != null">
+		    and dpt_base_info.updated_by = #{updatedBy}
+		</if>
+	        <if test="createdAt != null">
+		    and dpt_base_info.created_at = #{createdAt}
+		</if>
+	        <if test="updatedAt != null">
+		    and dpt_base_info.updated_at = #{updatedAt}
+		</if>
+		    and dpt_base_info.C2_LOGICDELETE_FLAG !='1'
+		</where>
+	order by 
+			created_at desc
+</select>
+
+
+
+
+
+<!-- ElementID:deleteLogic,Generated=true -->
+<update id="deleteLogic" parameterType="gbt.dept.Department">
+	update dpt_base_info set dpt_base_info.C2_LOGICDELETE_FLAG = '1' 
+where 1=1 and dpt_id = #{dptId}
+</update>
+
+<!-- ElementID:deleteBatchLogic,Generated=true -->
+<update id="deleteBatchLogic" parameterType="List">
+			update dpt_base_info 
+				set dpt_base_info.C2_LOGICDELETE_FLAG = '1' 
+			where dpt_base_info.dpt_id in 
+		<foreach collection="list" item="entity" index="index" open="(" separator="," close=")">
+				<if test="entity.dptId != null">
+					#{entity.dptId}
+				</if>
+		</foreach>
+</update>
+<!-- ElementID:selectMaxId,Generated=false -->
+<select id="selectMaxId" resultType="int">
+		select max(dpt_id)
+	    from dpt_base_info 
+</select>
+</mapper>

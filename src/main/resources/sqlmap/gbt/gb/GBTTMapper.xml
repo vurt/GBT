@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd"><mapper namespace="gbt.gb.GBTTMapper">	
+	
+<!-- ElementID:column_sql,Generated=true -->
+<sql id="column_sql">
+,
+</sql>
+
+<!-- ElementID:whereClause_sql,Generated=true -->
+<sql id="whereClause_sql">
+</sql>
+
+
+<!-- ElementName:cache,Generated=true -->
+<cache/>
+
+<!-- ElementID:insert,Generated=true -->
+<insert id="insert" parameterType="gbt.gb.GBTT">
+	insert into tb_sm_usercategory(
+		)
+	 values (
+	 )
+</insert>
+
+<!-- ElementID:count,Generated=true -->
+<select id="count" parameterType="gbt.gb.GBTT" resultType="int">
+		select count(*)
+	    from tb_sm_usercategory 
+		 <where>
+<include refid="whereClause_sql"/>
+		</where>
+</select>
+
+<!-- ElementID:update,Generated=true -->
+<update id="update" parameterType="gbt.gb.GBTT">
+	update tb_sm_usercategory
+<set>
+,
+</set>
+<where>
+</where>
+</update>
+
+<!-- ElementID:delete,Generated=true -->
+<delete id="delete" parameterType="gbt.gb.GBTT">
+    delete from tb_sm_usercategory 
+<where>
+</where>
+</delete>
+
+<!-- ElementID:select,Generated=true -->
+<select id="select" parameterType="gbt.gb.GBTT" resultMap="GBTTResult">
+	select 
+<include refid="column_sql"/>
+	    from tb_sm_usercategory 
+		 <where>
+<include refid="whereClause_sql"/>
+		</where>
+</select>
+
+<!-- ElementID:GBTTResult,Generated=true -->
+<resultMap id="GBTTResult" type="gbt.gb.GBTT">
+</resultMap>
+
+
+<!-- ElementID:insertBatch,Generated=true -->
+<insert id="insertBatch" parameterType="list">
+	insert into tb_sm_usercategory () 
+<foreach collection="list" item="entity" index="index" separator="union all">
+		select 
+,
+		from dual
+</foreach>
+</insert>
+
+
+
+<!-- ElementID:selectAll,Generated=true -->
+<select id="selectAll" resultMap="GBTTResult">
+	select 
+<include refid="column_sql"/>
+	    from tb_sm_usercategory 
+		 <where>
+<include refid="whereClause_sql"/>
+		</where>
+</select>
+
+
+
+
+
+
+<!-- ElementID:selectMany,Generated=true -->
+<select id="selectMany" parameterType="gbt.gb.GBTT" resultMap="GBTTResult">
+<foreach collection="list" item="entity" separator="intersect">
+	select 
+<include refid="column_sql"/>
+	    from tb_sm_usercategory 
+		 <where>
+<include refid="whereClause_sql"/>
+		</where>
+</foreach>
+</select>
+
+
+
+
+
+<!-- ElementID:selectByPage,Generated=true -->
+<select id="selectByPage" parameterType="gbt.gb.GBTT" resultMap="GBTTResult">
+	select 
+<include refid="column_sql"/>
+	    from tb_sm_usercategory 
+		 <where>
+<include refid="whereClause_sql"/>
+		</where>
+</select>
+
+
+
+
+</mapper>

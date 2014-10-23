@@ -1,0 +1,401 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd"><mapper namespace="gbt.dept.DepartmentNoteMapper">	
+
+<!-- ElementName:cache,Generated=true -->
+<cache/>
+
+<!-- ElementID:insert,Generated=true -->
+<insert id="insert" parameterType="gbt.dept.DepartmentNote">
+	insert into note_dpt_info(note_id,dpt_id,note_reco_time,note_item,note_mat,note_reg,note_alar_time,note_who,note_end,deal_cond,created_at,updated_at,created_by,updated_by)
+	 values (#{noteId,jdbcType=NUMERIC},#{dptId,jdbcType=NUMERIC},#{noteRecoTime,jdbcType=DATE},#{noteItem,jdbcType=CLOB},#{noteMat,jdbcType=CLOB},#{noteReg,jdbcType=VARCHAR},#{noteAlarTime,jdbcType=DATE},#{noteWho,jdbcType=NUMERIC},#{noteEnd,jdbcType=CHAR},#{dealCond,jdbcType=CLOB},#{createdAt,jdbcType=TIMESTAMP},#{updatedAt,jdbcType=TIMESTAMP},#{createdBy,jdbcType=NUMERIC},#{updatedBy,jdbcType=NUMERIC})
+</insert>
+
+<!-- ElementID:count,Generated=true -->
+<select id="count" parameterType="gbt.dept.DepartmentNote" resultType="int">
+		select count(*)
+	    from note_dpt_info 
+		 <where>
+	        <if test="noteId != null">
+		    and note_dpt_info.note_id = #{noteId}
+		</if>
+	        <if test="dptId != null">
+		    and note_dpt_info.dpt_id = #{dptId}
+		</if>
+	        <if test="noteRecoTime != null">
+		    and note_dpt_info.note_reco_time = #{noteRecoTime}
+		</if>
+	        <if test="noteItem != null">
+		    and note_dpt_info.note_item = #{noteItem}
+		</if>
+	        <if test="noteMat != null">
+		    and note_dpt_info.note_mat = #{noteMat}
+		</if>
+	        <if test="noteReg != null">
+		    and note_dpt_info.note_reg = #{noteReg}
+		</if>
+	        <if test="noteAlarTime != null">
+		    and note_dpt_info.note_alar_time = #{noteAlarTime}
+		</if>
+	        <if test="noteWho != null">
+		    and note_dpt_info.note_who = #{noteWho}
+		</if>
+	        <if test="noteEnd != null">
+		    and note_dpt_info.note_end = #{noteEnd}
+		</if>
+	        <if test="dealCond != null">
+		    and note_dpt_info.deal_cond = #{dealCond}
+		</if>
+	        <if test="createdAt != null">
+		    and note_dpt_info.created_at = #{createdAt}
+		</if>
+	        <if test="updatedAt != null">
+		    and note_dpt_info.updated_at = #{updatedAt}
+		</if>
+	        <if test="createdBy != null">
+		    and note_dpt_info.created_by = #{createdBy}
+		</if>
+	        <if test="updatedBy != null">
+		    and note_dpt_info.updated_by = #{updatedBy}
+		</if>
+		</where>
+</select>
+
+<!-- ElementID:update,Generated=true -->
+<update id="update" parameterType="gbt.dept.DepartmentNote">
+	update note_dpt_info
+<set>
+	<if test="dptId != null">dpt_id=#{dptId,jdbcType=NUMERIC},</if>
+	<if test="noteRecoTime != null">note_reco_time=#{noteRecoTime,jdbcType=DATE},</if>
+	<if test="noteItem != null">note_item=#{noteItem,jdbcType=CLOB},</if>
+	<if test="noteMat != null">note_mat=#{noteMat,jdbcType=CLOB},</if>
+	<if test="noteReg != null">note_reg=#{noteReg,jdbcType=VARCHAR},</if>
+	<if test="noteAlarTime != null">note_alar_time=#{noteAlarTime,jdbcType=DATE},</if>
+	<if test="noteWho != null">note_who=#{noteWho,jdbcType=NUMERIC},</if>
+	<if test="noteEnd != null">note_end=#{noteEnd,jdbcType=CHAR},</if>
+	<if test="dealCond != null">deal_cond=#{dealCond,jdbcType=CLOB},</if>
+	<if test="createdAt != null">created_at=#{createdAt,jdbcType=TIMESTAMP},</if>
+	<if test="updatedAt != null">updated_at=#{updatedAt,jdbcType=TIMESTAMP},</if>
+	<if test="createdBy != null">created_by=#{createdBy,jdbcType=NUMERIC},</if>
+	<if test="updatedBy != null">updated_by=#{updatedBy,jdbcType=NUMERIC}</if>
+</set>
+<where>
+	<choose>
+        <when test="noteId != null">and note_id = #{noteId}</when>
+        <otherwise>and note_id = </otherwise>
+    </choose>
+</where>
+</update>
+
+<!-- ElementID:delete,Generated=true -->
+<delete id="delete" parameterType="gbt.dept.DepartmentNote">
+    delete from note_dpt_info 
+where 1=1 and note_id = #{noteId}
+</delete>
+
+<!-- ElementID:select,Generated=true -->
+<select id="select" parameterType="gbt.dept.DepartmentNote" resultMap="DepartmentNoteResult">
+		select 
+		  note_dpt_info.note_id ,
+		  note_dpt_info.dpt_id ,
+		  note_dpt_info.note_reco_time ,
+		  note_dpt_info.note_item ,
+		  note_dpt_info.note_mat ,
+		  note_dpt_info.note_reg ,
+		  note_dpt_info.note_alar_time ,
+		  note_dpt_info.note_who ,
+		  note_dpt_info.note_end ,
+		  note_dpt_info.deal_cond ,
+		  note_dpt_info.created_at ,
+		  note_dpt_info.updated_at ,
+		  note_dpt_info.created_by ,
+		  note_dpt_info.updated_by 
+	    from note_dpt_info 
+		 <where>
+	        <if test="noteId != null">
+		    and note_dpt_info.note_id = #{noteId}
+		</if>
+	        <if test="dptId != null">
+		    and note_dpt_info.dpt_id = #{dptId}
+		</if>
+	        <if test="noteRecoTime != null">
+		    and note_dpt_info.note_reco_time = #{noteRecoTime}
+		</if>
+	        <if test="noteItem != null">
+		    and note_dpt_info.note_item = #{noteItem}
+		</if>
+	        <if test="noteMat != null">
+		    and note_dpt_info.note_mat = #{noteMat}
+		</if>
+	        <if test="noteReg != null">
+		    and note_dpt_info.note_reg = #{noteReg}
+		</if>
+	        <if test="noteAlarTime != null">
+		    and note_dpt_info.note_alar_time = #{noteAlarTime}
+		</if>
+	        <if test="noteWho != null">
+		    and note_dpt_info.note_who = #{noteWho}
+		</if>
+	        <if test="noteEnd != null">
+		    and note_dpt_info.note_end = #{noteEnd}
+		</if>
+	        <if test="dealCond != null">
+		    and note_dpt_info.deal_cond = #{dealCond}
+		</if>
+	        <if test="createdAt != null">
+		    and note_dpt_info.created_at = #{createdAt}
+		</if>
+	        <if test="updatedAt != null">
+		    and note_dpt_info.updated_at = #{updatedAt}
+		</if>
+	        <if test="createdBy != null">
+		    and note_dpt_info.created_by = #{createdBy}
+		</if>
+	        <if test="updatedBy != null">
+		    and note_dpt_info.updated_by = #{updatedBy}
+		</if>
+		</where>
+</select>
+
+<!-- ElementID:DepartmentNoteResult,Generated=true -->
+<resultMap id="DepartmentNoteResult" type="gbt.dept.DepartmentNote">
+	<id property="noteId" column="note_id"/>
+	<result property="dptId" column="dpt_id"/>
+	<result property="noteRecoTime" column="note_reco_time"/>
+	<result property="noteItem" column="note_item"/>
+	<result property="noteMat" column="note_mat"/>
+	<result property="noteReg" column="note_reg"/>
+	<result property="noteAlarTime" column="note_alar_time"/>
+	<result property="noteWho" column="note_who"/>
+	<result property="noteEnd" column="note_end"/>
+	<result property="dealCond" column="deal_cond"/>
+	<result property="createdAt" column="created_at"/>
+	<result property="updatedAt" column="updated_at"/>
+	<result property="createdBy" column="created_by"/>
+	<result property="updatedBy" column="updated_by"/>
+</resultMap>
+
+
+<!-- ElementID:insertBatch,Generated=true -->
+<insert id="insertBatch" parameterType="list">
+	insert into note_dpt_info (note_id,dpt_id,note_reco_time,note_item,note_mat,note_reg,note_alar_time,note_who,note_end,deal_cond,created_at,updated_at,created_by,updated_by) 
+<foreach collection="list" item="entity" index="index" separator="union all">
+		select 
+		#{entity.noteId,jdbcType = NUMERIC},
+		#{entity.dptId,jdbcType = NUMERIC},
+		#{entity.noteRecoTime,jdbcType = DATE},
+		#{entity.noteItem,jdbcType = CLOB},
+		#{entity.noteMat,jdbcType = CLOB},
+		#{entity.noteReg,jdbcType = VARCHAR},
+		#{entity.noteAlarTime,jdbcType = DATE},
+		#{entity.noteWho,jdbcType = NUMERIC},
+		#{entity.noteEnd,jdbcType = CHAR},
+		#{entity.dealCond,jdbcType = CLOB},
+		#{entity.createdAt,jdbcType = TIMESTAMP},
+		#{entity.updatedAt,jdbcType = TIMESTAMP},
+		#{entity.createdBy,jdbcType = NUMERIC},
+		#{entity.updatedBy,jdbcType = NUMERIC}
+		from dual
+</foreach>
+</insert>
+
+<!-- ElementID:deleteBatch,Generated=true -->
+<delete id="deleteBatch" parameterType="List">
+	delete from note_dpt_info where note_id in
+<trim prefix="(" suffix=")" suffixOverrides=",">
+<foreach collection="list" item="entity" separator=",">
+	#{entity.noteId}
+</foreach>
+</trim>
+</delete>
+
+<!-- ElementID:updateBatch,Generated=true -->
+<update id="updateBatch" parameterType="gbt.dept.DepartmentNote">
+	<foreach collection="list" item="entity" separator=";">
+			update note_dpt_info
+	<set>
+	<if test="entity.dptId != null">dptId= #{entity.dptId,jdbcType=NUMERIC},</if>
+	<if test="entity.noteRecoTime != null">noteRecoTime= #{entity.noteRecoTime,jdbcType=DATE},</if>
+	<if test="entity.noteItem != null">noteItem= #{entity.noteItem,jdbcType=CLOB},</if>
+	<if test="entity.noteMat != null">noteMat= #{entity.noteMat,jdbcType=CLOB},</if>
+	<if test="entity.noteReg != null">noteReg= #{entity.noteReg,jdbcType=VARCHAR},</if>
+	<if test="entity.noteAlarTime != null">noteAlarTime= #{entity.noteAlarTime,jdbcType=DATE},</if>
+	<if test="entity.noteWho != null">noteWho= #{entity.noteWho,jdbcType=NUMERIC},</if>
+	<if test="entity.noteEnd != null">noteEnd= #{entity.noteEnd,jdbcType=CHAR},</if>
+	<if test="entity.dealCond != null">dealCond= #{entity.dealCond,jdbcType=CLOB},</if>
+	<if test="entity.createdAt != null">createdAt= #{entity.createdAt,jdbcType=TIMESTAMP},</if>
+	<if test="entity.updatedAt != null">updatedAt= #{entity.updatedAt,jdbcType=TIMESTAMP},</if>
+	<if test="entity.createdBy != null">createdBy= #{entity.createdBy,jdbcType=NUMERIC},</if>
+	<if test="entity.updatedBy != null">updatedBy= #{entity.updatedBy,jdbcType=NUMERIC}</if>
+	</set>
+		<where>
+			<choose>
+				<when test="noteId != null">and note_id = #{noteId}</when>
+				<otherwise>and note_id = </otherwise>
+			</choose>
+		</where>
+	</foreach>
+</update>
+
+<!-- ElementID:selectAll,Generated=true -->
+<select id="selectAll" resultMap="DepartmentNoteResult">
+			select 
+		  note_dpt_info.note_id ,
+		  note_dpt_info.dpt_id ,
+		  note_dpt_info.note_reco_time ,
+		  note_dpt_info.note_item ,
+		  note_dpt_info.note_mat ,
+		  note_dpt_info.note_reg ,
+		  note_dpt_info.note_alar_time ,
+		  note_dpt_info.note_who ,
+		  note_dpt_info.note_end ,
+		  note_dpt_info.deal_cond ,
+		  note_dpt_info.created_at ,
+		  note_dpt_info.updated_at ,
+		  note_dpt_info.created_by ,
+		  note_dpt_info.updated_by 
+	    from note_dpt_info 
+</select>
+
+
+
+
+
+
+<!-- ElementID:selectMany,Generated=true -->
+<select id="selectMany" parameterType="gbt.dept.DepartmentNote" resultMap="DepartmentNoteResult">
+<foreach collection="list" item="entity" separator="intersect">
+			select 
+		  note_dpt_info.note_id ,
+		  note_dpt_info.dpt_id ,
+		  note_dpt_info.note_reco_time ,
+		  note_dpt_info.note_item ,
+		  note_dpt_info.note_mat ,
+		  note_dpt_info.note_reg ,
+		  note_dpt_info.note_alar_time ,
+		  note_dpt_info.note_who ,
+		  note_dpt_info.note_end ,
+		  note_dpt_info.deal_cond ,
+		  note_dpt_info.created_at ,
+		  note_dpt_info.updated_at ,
+		  note_dpt_info.created_by ,
+		  note_dpt_info.updated_by 
+	    from note_dpt_info 
+	<where>
+	        <if test="entity.noteId != null">
+		    and note_dpt_info.note_id = #{entity.noteId}
+		</if>
+	        <if test="entity.dptId != null">
+		    and note_dpt_info.dpt_id = #{entity.dptId}
+		</if>
+	        <if test="entity.noteRecoTime != null">
+		    and note_dpt_info.note_reco_time = #{entity.noteRecoTime}
+		</if>
+	        <if test="entity.noteItem != null">
+		    and note_dpt_info.note_item = #{entity.noteItem}
+		</if>
+	        <if test="entity.noteMat != null">
+		    and note_dpt_info.note_mat = #{entity.noteMat}
+		</if>
+	        <if test="entity.noteReg != null">
+		    and note_dpt_info.note_reg = #{entity.noteReg}
+		</if>
+	        <if test="entity.noteAlarTime != null">
+		    and note_dpt_info.note_alar_time = #{entity.noteAlarTime}
+		</if>
+	        <if test="entity.noteWho != null">
+		    and note_dpt_info.note_who = #{entity.noteWho}
+		</if>
+	        <if test="entity.noteEnd != null">
+		    and note_dpt_info.note_end = #{entity.noteEnd}
+		</if>
+	        <if test="entity.dealCond != null">
+		    and note_dpt_info.deal_cond = #{entity.dealCond}
+		</if>
+	        <if test="entity.createdAt != null">
+		    and note_dpt_info.created_at = #{entity.createdAt}
+		</if>
+	        <if test="entity.updatedAt != null">
+		    and note_dpt_info.updated_at = #{entity.updatedAt}
+		</if>
+	        <if test="entity.createdBy != null">
+		    and note_dpt_info.created_by = #{entity.createdBy}
+		</if>
+	        <if test="entity.updatedBy != null">
+		    and note_dpt_info.updated_by = #{entity.updatedBy}
+		</if>
+	</where>
+</foreach>
+</select>
+
+
+
+
+
+<!-- ElementID:selectByPage,Generated=true -->
+<select id="selectByPage" parameterType="gbt.dept.DepartmentNote" resultMap="DepartmentNoteResult">
+		select 
+		  note_dpt_info.note_id ,
+		  note_dpt_info.dpt_id ,
+		  note_dpt_info.note_reco_time ,
+		  note_dpt_info.note_item ,
+		  note_dpt_info.note_mat ,
+		  note_dpt_info.note_reg ,
+		  note_dpt_info.note_alar_time ,
+		  note_dpt_info.note_who ,
+		  note_dpt_info.note_end ,
+		  note_dpt_info.deal_cond ,
+		  note_dpt_info.created_at ,
+		  note_dpt_info.updated_at ,
+		  note_dpt_info.created_by ,
+		  note_dpt_info.updated_by 
+	    from note_dpt_info 
+		 <where>
+	        <if test="noteId != null">
+		    and note_dpt_info.note_id = #{noteId}
+		</if>
+	        <if test="dptId != null">
+		    and note_dpt_info.dpt_id = #{dptId}
+		</if>
+	        <if test="noteRecoTime != null">
+		    and note_dpt_info.note_reco_time = #{noteRecoTime}
+		</if>
+	        <if test="noteItem != null">
+		    and note_dpt_info.note_item = #{noteItem}
+		</if>
+	        <if test="noteMat != null">
+		    and note_dpt_info.note_mat = #{noteMat}
+		</if>
+	        <if test="noteReg != null">
+		    and note_dpt_info.note_reg = #{noteReg}
+		</if>
+	        <if test="noteAlarTime != null">
+		    and note_dpt_info.note_alar_time = #{noteAlarTime}
+		</if>
+	        <if test="noteWho != null">
+		    and note_dpt_info.note_who = #{noteWho}
+		</if>
+	        <if test="noteEnd != null">
+		    and note_dpt_info.note_end = #{noteEnd}
+		</if>
+	        <if test="dealCond != null">
+		    and note_dpt_info.deal_cond = #{dealCond}
+		</if>
+	        <if test="createdAt != null">
+		    and note_dpt_info.created_at = #{createdAt}
+		</if>
+	        <if test="updatedAt != null">
+		    and note_dpt_info.updated_at = #{updatedAt}
+		</if>
+	        <if test="createdBy != null">
+		    and note_dpt_info.created_by = #{createdBy}
+		</if>
+	        <if test="updatedBy != null">
+		    and note_dpt_info.updated_by = #{updatedBy}
+		</if>
+		</where>
+</select>
+
+
+
+
+</mapper>

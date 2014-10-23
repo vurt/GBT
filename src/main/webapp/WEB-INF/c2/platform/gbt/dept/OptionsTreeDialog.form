@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form:Form xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dync="http://www.chinacreator.com/platform/mvc/ui/dync" xmlns:form="http://www.chinacreator.com/platform/mvc/form" xmlns:template="http://www.chinacreator.com/c2/ui/template" name="数据字典选择对话框" sn="optionsDialog" type="form">
+  <form:control type="page/modal">
+    <form:attributes source="page/modal">
+      <dync:attribute default="" desc="页面头部的标题" group="HTML" hidden="false" id="title" name="标题" required="false" value="{{$params.title}}">
+        <dync:render colSpan="2" height="0" multi="false" name="text"/>
+        <dync:children/>
+      </dync:attribute>
+    </form:attributes>
+  </form:control>
+  <form:child xsi:type="form:Group" id="newGroup" name="简单容器(DIV)">
+    <form:control type="container/div">
+      <form:attributes source="container/div"/>
+    </form:control>
+    <form:child xsi:type="form:Field" binding="$model.tree" id="optionsTree" name="树" customize="true">
+      <form:control type="widget/tree">
+        <form:attributes source="widget/tree">
+          <dync:attribute default="6" desc="网格布局中占位数" group="显示设置" hidden="false" id="span" name="占位数" required="false" value="12">
+            <dync:render colSpan="1" height="0" multi="false" name="text"/>
+            <dync:children/>
+          </dync:attribute>
+          <dync:attribute default="false" desc="加载数据成功后展开所有父节点，包括异步加载的父节点。" group="显示设置" hidden="false" id="expendAll" name="默认展开所有层级" required="false" value="true">
+            <dync:render colSpan="1" height="0" multi="false" name="checkbox"/>
+            <dync:children/>
+            <dync:onChange>
+              <template:case value="false">
+                <template:hide param="expendLevel" value="false"/>
+              </template:case>
+              <template:case value="true">
+                <template:hide param="expendLevel" value="true"/>
+              </template:case>
+            </dync:onChange>
+          </dync:attribute>
+          <dync:attribute default="" desc="异步加载时请求提交的静态参数键值对。直接用 JSON 格式制作键值对，例如：{ key1:&quot;value1&quot; }。支持`$params`动态参数，{&quot;aa&quot;,$params.aa}注：只能使用双引号！" group="数据设置" hidden="false" id="otherParam" name="初始化参数" required="false" value="{&quot;type&quot;:$params.type}">
+            <dync:render colSpan="1" height="0" multi="false" name="text"/>
+            <dync:children/>
+          </dync:attribute>
+          <dync:attribute default="" desc="捕获鼠标双击之后的事件回调函数。&#xA;                @param event[event] 标准的 js event 对象&#xA;                @param treeId[String] 树控件的id属性。&#xA;                @param treeNode[node] 鼠标双击时所在节点的 JSON 数据对象。如果不在节点上，则返回 null。" group="事件设置" hidden="false" id="nodeDblClick" name="双击" required="false" value="optionsTree_nodeDblClick(event,treeId,treeNode)">
+            <dync:render colSpan="1" height="0" multi="false" name="event">
+              <dync:item name="params" value="event,treeId,treeNode"/>
+            </dync:render>
+            <dync:children/>
+          </dync:attribute>
+        </form:attributes>
+      </form:control>
+      <form:validation/>
+    </form:child>
+  </form:child>
+  <form:child xsi:type="form:Group" id="newGroup1" name="对话框工具条">
+    <form:control type="container/toolbar_modal_footer">
+      <form:attributes source="container/toolbar_modal_footer"/>
+    </form:control>
+    <form:child xsi:type="form:Field" id="okBtn" name="确定" customize="true">
+      <form:control type="widget/button">
+        <form:attributes source="widget/button">
+          <dync:attribute default="btn-primary" desc="按钮样式" group="HTML设置" hidden="false" id="style" name="样式" required="false" value="btn-success">
+            <dync:render colSpan="1" height="0" multi="false" name="select">
+              <dync:item name="默认" value="btn-default"/>
+              <dync:item name="主要" value="btn-primary"/>
+              <dync:item name="成功" value="btn-success"/>
+              <dync:item name="信息" value="btn-info"/>
+              <dync:item name="警告" value="btn-warning"/>
+              <dync:item name="危险" value="btn-danger"/>
+              <dync:item name="链接" value="btn-link"/>
+            </dync:render>
+            <dync:children/>
+          </dync:attribute>
+          <dync:attribute default="" desc="按钮图标，Font Awesom 3.2.1中定义的所有图标都可用" group="HTML设置" hidden="false" id="icon" name="图标" required="false" value="fa-check">
+            <dync:render colSpan="1" height="0" multi="false" name="selectIcon"/>
+            <dync:children/>
+          </dync:attribute>
+          <dync:attribute default="" desc="按钮事件。&#xA;                $param $event AngularJS的[event](https://docs.angularjs.org/guide/expression#-event-)事件。" group="事件设置" hidden="false" id="click" name="点击事件" required="false" value="okBtn_click($event)">
+            <dync:render colSpan="1" height="0" multi="false" name="event">
+              <dync:item name="params" value="$event"/>
+            </dync:render>
+            <dync:children/>
+          </dync:attribute>
+        </form:attributes>
+      </form:control>
+      <form:validation/>
+    </form:child>
+    <form:child xsi:type="form:Field" id="cancleBtn" name="取消" customize="true">
+      <form:control type="widget/button">
+        <form:attributes source="widget/button">
+          <dync:attribute default="" desc="按钮图标，Font Awesom 3.2.1中定义的所有图标都可用" group="HTML设置" hidden="false" id="icon" name="图标" required="false" value="fa-times">
+            <dync:render colSpan="1" height="0" multi="false" name="selectIcon"/>
+            <dync:children/>
+          </dync:attribute>
+          <dync:attribute default="" desc="按钮事件。&#xA;                $param $event AngularJS的[event](https://docs.angularjs.org/guide/expression#-event-)事件。" group="事件设置" hidden="false" id="click" name="点击事件" required="false" value="cancleBtn_click($event)">
+            <dync:render colSpan="1" height="0" multi="false" name="event">
+              <dync:item name="params" value="$event"/>
+            </dync:render>
+            <dync:children/>
+          </dync:attribute>
+        </form:attributes>
+      </form:control>
+      <form:validation/>
+    </form:child>
+  </form:child>
+  <form:datasources>
+    <form:datasource xsi:type="form:Inputs"/>
+    <form:datasource xsi:type="form:TreeDataSource" id="tree" name="树型数据源" impl="gbt.dept.ds.OptionsTreeContentProvider" type="custom"/>
+  </form:datasources>
+  <form:scripts>
+
+okBtn_click:function($event){
+	Modal.instance.close($view.optionsTree.getSelectedNodes()[0]);
+},
+
+cancleBtn_click:function($event){
+	Modal.instance.dismiss();
+},
+
+optionsTree_nodeDblClick:function(event,treeId,treeNode){
+	Modal.instance.close(treeNode);
+}</form:scripts>
+</form:Form>

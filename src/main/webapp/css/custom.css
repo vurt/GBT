@@ -1,0 +1,6 @@
+@CHARSET "UTF-8";
+.ui-jqgrid tr.ui-row-ltr td, .ui-jqgrid tr.ui-row-rtl td {
+border-bottom: 1px solid #E1E1E1;
+  padding: 0px;
+border-color: #E1E1E1;
+}

@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd"><mapper namespace="gbt.dept.AnnuDeptInfoMapper">	
+
+<!-- ElementName:cache,Generated=true -->
+<cache/>
+
+<!-- ElementID:insert,Generated=true -->
+<insert id="insert" parameterType="gbt.dept.AnnuDeptInfo">
+	insert into annu_dpt_info(exam_id,dpt_id,annu,lvl,mat_add,created_at,updated_at,created_by,updated_by)
+	 values (#{examId,jdbcType=NUMERIC},#{dptId,jdbcType=NUMERIC},#{annu,jdbcType=NUMERIC},#{lvl,jdbcType=NUMERIC},#{matAdd,jdbcType=CLOB},#{createdAt,jdbcType=TIMESTAMP},#{updatedAt,jdbcType=TIMESTAMP},#{createdBy,jdbcType=NUMERIC},#{updatedBy,jdbcType=NUMERIC})
+</insert>
+
+<!-- ElementID:count,Generated=true -->
+<select id="count" parameterType="gbt.dept.AnnuDeptInfo" resultType="int">
+		select count(*)
+	    from annu_dpt_info 
+		 <where>
+	        <if test="examId != null">
+		    and annu_dpt_info.exam_id = #{examId}
+		</if>
+	        <if test="dptId != null">
+		    and annu_dpt_info.dpt_id = #{dptId}
+		</if>
+	        <if test="annu != null">
+		    and annu_dpt_info.annu = #{annu}
+		</if>
+	        <if test="lvl != null">
+		    and annu_dpt_info.lvl = #{lvl}
+		</if>
+	        <if test="matAdd != null">
+		    and annu_dpt_info.mat_add = #{matAdd}
+		</if>
+	        <if test="createdAt != null">
+		    and annu_dpt_info.created_at = #{createdAt}
+		</if>
+	        <if test="updatedAt != null">
+		    and annu_dpt_info.updated_at = #{updatedAt}
+		</if>
+	        <if test="createdBy != null">
+		    and annu_dpt_info.created_by = #{createdBy}
+		</if>
+	        <if test="updatedBy != null">
+		    and annu_dpt_info.updated_by = #{updatedBy}
+		</if>
+		</where>
+</select>
+
+<!-- ElementID:update,Generated=true -->
+<update id="update" parameterType="gbt.dept.AnnuDeptInfo">
+	update annu_dpt_info
+<set>
+	<if test="dptId != null">dpt_id=#{dptId,jdbcType=NUMERIC},</if>
+	<if test="annu != null">annu=#{annu,jdbcType=NUMERIC},</if>
+	<if test="lvl != null">lvl=#{lvl,jdbcType=NUMERIC},</if>
+	<if test="matAdd != null">mat_add=#{matAdd,jdbcType=CLOB},</if>
+	<if test="createdAt != null">created_at=#{createdAt,jdbcType=TIMESTAMP},</if>
+	<if test="updatedAt != null">updated_at=#{updatedAt,jdbcType=TIMESTAMP},</if>
+	<if test="createdBy != null">created_by=#{createdBy,jdbcType=NUMERIC},</if>
+	<if test="updatedBy != null">updated_by=#{updatedBy,jdbcType=NUMERIC}</if>
+</set>
+<where>
+	<choose>
+        <when test="examId != null">and exam_id = #{examId}</when>
+        <otherwise>and exam_id = </otherwise>
+    </choose>
+</where>
+</update>
+
+<!-- ElementID:delete,Generated=true -->
+<delete id="delete" parameterType="gbt.dept.AnnuDeptInfo">
+    delete from annu_dpt_info 
+where 1=1 and exam_id = #{examId}
+</delete>
+
+<!-- ElementID:select,Generated=true -->
+<select id="select" parameterType="gbt.dept.AnnuDeptInfo" resultMap="AnnuDeptInfoResult">
+		select 
+		  annu_dpt_info.exam_id ,
+		  annu_dpt_info.dpt_id ,
+		  annu_dpt_info.annu ,
+		  annu_dpt_info.lvl ,
+		  annu_dpt_info.mat_add ,
+		  annu_dpt_info.created_at ,
+		  annu_dpt_info.updated_at ,
+		  annu_dpt_info.created_by ,
+		  annu_dpt_info.updated_by 
+	    from annu_dpt_info 
+		 <where>
+	        <if test="examId != null">
+		    and annu_dpt_info.exam_id = #{examId}
+		</if>
+	        <if test="dptId != null">
+		    and annu_dpt_info.dpt_id = #{dptId}
+		</if>
+	        <if test="annu != null">
+		    and annu_dpt_info.annu = #{annu}
+		</if>
+	        <if test="lvl != null">
+		    and annu_dpt_info.lvl = #{lvl}
+		</if>
+	        <if test="matAdd != null">
+		    and annu_dpt_info.mat_add = #{matAdd}
+		</if>
+	        <if test="createdAt != null">
+		    and annu_dpt_info.created_at = #{createdAt}
+		</if>
+	        <if test="updatedAt != null">
+		    and annu_dpt_info.updated_at = #{updatedAt}
+		</if>
+	        <if test="createdBy != null">
+		    and annu_dpt_info.created_by = #{createdBy}
+		</if>
+	        <if test="updatedBy != null">
+		    and annu_dpt_info.updated_by = #{updatedBy}
+		</if>
+		</where>
+	order by 
+			annu asc
+</select>
+
+<!-- ElementID:AnnuDeptInfoResult,Generated=true -->
+<resultMap id="AnnuDeptInfoResult" type="gbt.dept.AnnuDeptInfo">
+	<id property="examId" column="exam_id"/>
+	<result property="dptId" column="dpt_id"/>
+	<result property="annu" column="annu"/>
+	<result property="lvl" column="lvl"/>
+	<result property="matAdd" column="mat_add"/>
+	<result property="createdAt" column="created_at"/>
+	<result property="updatedAt" column="updated_at"/>
+	<result property="createdBy" column="created_by"/>
+	<result property="updatedBy" column="updated_by"/>
+</resultMap>
+
+
+<!-- ElementID:insertBatch,Generated=true -->
+<insert id="insertBatch" parameterType="list">
+	insert into annu_dpt_info (exam_id,dpt_id,annu,lvl,mat_add,created_at,updated_at,created_by,updated_by) 
+<foreach collection="list" item="entity" index="index" separator="union all">
+		select 
+		#{entity.examId,jdbcType = NUMERIC},
+		#{entity.dptId,jdbcType = NUMERIC},
+		#{entity.annu,jdbcType = NUMERIC},
+		#{entity.lvl,jdbcType = NUMERIC},
+		#{entity.matAdd,jdbcType = CLOB},
+		#{entity.createdAt,jdbcType = TIMESTAMP},
+		#{entity.updatedAt,jdbcType = TIMESTAMP},
+		#{entity.createdBy,jdbcType = NUMERIC},
+		#{entity.updatedBy,jdbcType = NUMERIC}
+		from dual
+</foreach>
+</insert>
+
+<!-- ElementID:deleteBatch,Generated=true -->
+<delete id="deleteBatch" parameterType="List">
+	delete from annu_dpt_info where exam_id in
+<trim prefix="(" suffix=")" suffixOverrides=",">
+<foreach collection="list" item="entity" separator=",">
+	#{entity.examId}
+</foreach>
+</trim>
+</delete>
+
+<!-- ElementID:updateBatch,Generated=true -->
+<update id="updateBatch" parameterType="gbt.dept.AnnuDeptInfo">
+	<foreach collection="list" item="entity" separator=";">
+			update annu_dpt_info
+	<set>
+	<if test="entity.dptId != null">dptId= #{entity.dptId,jdbcType=NUMERIC},</if>
+	<if test="entity.annu != null">annu= #{entity.annu,jdbcType=NUMERIC},</if>
+	<if test="entity.lvl != null">lvl= #{entity.lvl,jdbcType=NUMERIC},</if>
+	<if test="entity.matAdd != null">matAdd= #{entity.matAdd,jdbcType=CLOB},</if>
+	<if test="entity.createdAt != null">createdAt= #{entity.createdAt,jdbcType=TIMESTAMP},</if>
+	<if test="entity.updatedAt != null">updatedAt= #{entity.updatedAt,jdbcType=TIMESTAMP},</if>
+	<if test="entity.createdBy != null">createdBy= #{entity.createdBy,jdbcType=NUMERIC},</if>
+	<if test="entity.updatedBy != null">updatedBy= #{entity.updatedBy,jdbcType=NUMERIC}</if>
+	</set>
+		<where>
+			<choose>
+				<when test="examId != null">and exam_id = #{examId}</when>
+				<otherwise>and exam_id = </otherwise>
+			</choose>
+		</where>
+	</foreach>
+</update>
+
+<!-- ElementID:selectAll,Generated=true -->
+<select id="selectAll" resultMap="AnnuDeptInfoResult">
+			select 
+		  annu_dpt_info.exam_id ,
+		  annu_dpt_info.dpt_id ,
+		  annu_dpt_info.annu ,
+		  annu_dpt_info.lvl ,
+		  annu_dpt_info.mat_add ,
+		  annu_dpt_info.created_at ,
+		  annu_dpt_info.updated_at ,
+		  annu_dpt_info.created_by ,
+		  annu_dpt_info.updated_by 
+	    from annu_dpt_info 
+</select>
+
+
+
+
+
+
+<!-- ElementID:selectMany,Generated=true -->
+<select id="selectMany" parameterType="gbt.dept.AnnuDeptInfo" resultMap="AnnuDeptInfoResult">
+<foreach collection="list" item="entity" separator="intersect">
+			select 
+		  annu_dpt_info.exam_id ,
+		  annu_dpt_info.dpt_id ,
+		  annu_dpt_info.annu ,
+		  annu_dpt_info.lvl ,
+		  annu_dpt_info.mat_add ,
+		  annu_dpt_info.created_at ,
+		  annu_dpt_info.updated_at ,
+		  annu_dpt_info.created_by ,
+		  annu_dpt_info.updated_by 
+	    from annu_dpt_info 
+	<where>
+	        <if test="entity.examId != null">
+		    and annu_dpt_info.exam_id = #{entity.examId}
+		</if>
+	        <if test="entity.dptId != null">
+		    and annu_dpt_info.dpt_id = #{entity.dptId}
+		</if>
+	        <if test="entity.annu != null">
+		    and annu_dpt_info.annu = #{entity.annu}
+		</if>
+	        <if test="entity.lvl != null">
+		    and annu_dpt_info.lvl = #{entity.lvl}
+		</if>
+	        <if test="entity.matAdd != null">
+		    and annu_dpt_info.mat_add = #{entity.matAdd}
+		</if>
+	        <if test="entity.createdAt != null">
+		    and annu_dpt_info.created_at = #{entity.createdAt}
+		</if>
+	        <if test="entity.updatedAt != null">
+		    and annu_dpt_info.updated_at = #{entity.updatedAt}
+		</if>
+	        <if test="entity.createdBy != null">
+		    and annu_dpt_info.created_by = #{entity.createdBy}
+		</if>
+	        <if test="entity.updatedBy != null">
+		    and annu_dpt_info.updated_by = #{entity.updatedBy}
+		</if>
+	</where>
+</foreach>
+</select>
+
+
+
+
+
+<!-- ElementID:selectByPage,Generated=true -->
+<select id="selectByPage" parameterType="gbt.dept.AnnuDeptInfo" resultMap="AnnuDeptInfoResult">
+		select 
+		  annu_dpt_info.exam_id ,
+		  annu_dpt_info.dpt_id ,
+		  annu_dpt_info.annu ,
+		  annu_dpt_info.lvl ,
+		  annu_dpt_info.mat_add ,
+		  annu_dpt_info.created_at ,
+		  annu_dpt_info.updated_at ,
+		  annu_dpt_info.created_by ,
+		  annu_dpt_info.updated_by 
+	    from annu_dpt_info 
+		 <where>
+	        <if test="examId != null">
+		    and annu_dpt_info.exam_id = #{examId}
+		</if>
+	        <if test="dptId != null">
+		    and annu_dpt_info.dpt_id = #{dptId}
+		</if>
+	        <if test="annu != null">
+		    and annu_dpt_info.annu = #{annu}
+		</if>
+	        <if test="lvl != null">
+		    and annu_dpt_info.lvl = #{lvl}
+		</if>
+	        <if test="matAdd != null">
+		    and annu_dpt_info.mat_add = #{matAdd}
+		</if>
+	        <if test="createdAt != null">
+		    and annu_dpt_info.created_at = #{createdAt}
+		</if>
+	        <if test="updatedAt != null">
+		    and annu_dpt_info.updated_at = #{updatedAt}
+		</if>
+	        <if test="createdBy != null">
+		    and annu_dpt_info.created_by = #{createdBy}
+		</if>
+	        <if test="updatedBy != null">
+		    and annu_dpt_info.updated_by = #{updatedBy}
+		</if>
+		</where>
+	order by 
+			annu asc
+</select>
+
+
+
+
+</mapper>
